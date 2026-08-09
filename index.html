@@ -105,7 +105,7 @@
         .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
         .card p { color: #333333; }
 
-        /* Section Simulasi (BARU) */
+        /* Section Simulasi */
         .simulation-section { padding: 50px 0; background: var(--white); }
         .simulation-subtitle { text-align: center; color: #555555; margin-bottom: 25px; font-size: 0.95rem; }
         .table-wrap { overflow-x: auto; background: var(--white); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
@@ -131,7 +131,8 @@
         .review-text { font-size: 0.92rem; color: #333; font-style: italic; margin-bottom: 15px; line-height: 1.5; }
         .reviewer-info { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 10px; }
         .reviewer-name { font-weight: 700; color: var(--primary); font-size: 0.9rem; }
-        .reviewer-location { font-size: 0.8rem; color: #666; background: #e2e8f0; padding: 2px 8px; border-radius: 10px; }
+        .reviewer-unit { font-size: 0.8rem; font-weight: 600; color: #0284c7; margin-top: 2px; }
+        .reviewer-location { font-size: 0.8rem; color: #666; background: #e2e8f0; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
 
         /* Keamanan */
         .security-section { padding: 50px 0; background: var(--white); }
@@ -319,7 +320,7 @@
             </div>
         </section>
 
-        <!-- Tabel Contoh Simulasi Pencairan (EEAT - Expertise) -->
+        <!-- Tabel Contoh Simulasi Pencairan -->
         <section class="simulation-section">
             <div class="container">
                 <h2 class="section-title">Contoh Simulasi & Taksiran Pencairan</h2>
@@ -406,13 +407,16 @@
                     </div>
                 </div>
 
-                <!-- Cuplikan Review / Testimoni -->
+                <!-- Cuplikan Review / Testimoni dengan Detail Unit Kendaraan -->
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="stars">★★★★★</div>
                         <p class="review-text">"Sangat terbantu untuk modal tambahan usaha warung. Pagi disurvei ke rumah di Bekasi, sorenya dana langsung cair ke rekening. Agennya ramah dan tidak ada potongan aneh-aneh."</p>
                         <div class="reviewer-info">
-                            <span class="reviewer-name">Bpk. Hendra S.</span>
+                            <div>
+                                <div class="reviewer-name">Bpk. Hendra S.</div>
+                                <div class="reviewer-unit">🛵 Honda Vario 125 (2020)</div>
+                            </div>
                             <span class="reviewer-location">Bekasi</span>
                         </div>
                     </div>
@@ -420,7 +424,10 @@
                         <div class="stars">★★★★★</div>
                         <p class="review-text">"BPKB mobil Avanza saya pajaknya mati 2 tahun, awalnya bingung tapi ternyata bisa diproses lewat BFI Finance dan dibantu potong pencairan. Amanah banget!"</p>
                         <div class="reviewer-info">
-                            <span class="reviewer-name">Ibu Rina K.</span>
+                            <div>
+                                <div class="reviewer-name">Ibu Rina K.</div>
+                                <div class="reviewer-unit">🚗 Toyota Avanza G (2018)</div>
+                            </div>
                             <span class="reviewer-location">Tangerang Selatan</span>
                         </div>
                     </div>
@@ -428,7 +435,10 @@
                         <div class="stars">★★★★★</div>
                         <p class="review-text">"Awalnya ragu karena takut calo/makelar. Tapi agen menjelaskan dengan detail kalau BPKB langsung disimpan di brankas kantor cabang BFI Depok. Mantap, sangat transparan."</p>
                         <div class="reviewer-info">
-                            <span class="reviewer-name">Bpk. Agus Prasetyo</span>
+                            <div>
+                                <div class="reviewer-name">Bpk. Agus Prasetyo</div>
+                                <div class="reviewer-unit">🚗 Honda HR-V E CVT (2019)</div>
+                            </div>
                             <span class="reviewer-location">Depok</span>
                         </div>
                     </div>
