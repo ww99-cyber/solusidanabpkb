@@ -47,6 +47,10 @@
         .brand-name span { color: #007a33; }
         .brand-tagline { font-size: 0.65rem; font-weight: 700; color: #333333; letter-spacing: 0.5px; margin-top: 3px; }
 
+        .header-contacts { display: flex; align-items: center; gap: 12px; }
+        .header-contact-link { font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+        .header-contact-link:hover { text-decoration: underline; }
+
         /* Hero Section */
         .hero { background: linear-gradient(135deg, #eef5fc 0%, #ffffff 100%); padding: 50px 0; text-align: center; }
         .hero h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
@@ -58,6 +62,9 @@
             padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 800; margin-bottom: 15px; border: 1px solid #ffccbc;
         }
 
+        /* Contact Action Group */
+        .action-group { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; }
+
         /* Buttons */
         .btn-wa {
             display: inline-flex; align-items: center; justify-content: center; background-color: var(--wa-green);
@@ -66,6 +73,18 @@
         }
         .btn-wa:hover { transform: scale(1.03); background-color: #0b6b2d; }
         .btn-wa svg { margin-right: 10px; width: 24px; height: 24px; fill: currentColor; }
+
+        .btn-phone {
+            display: inline-flex; align-items: center; justify-content: center; background-color: var(--primary);
+            color: var(--white); font-size: 1.1rem; font-weight: bold; padding: 16px 28px; border-radius: 50px;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(0, 82, 155, 0.3); transition: transform 0.2s;
+        }
+        .btn-phone:hover { transform: scale(1.03); background-color: #003d73; }
+        .btn-phone svg { margin-right: 8px; width: 20px; height: 20px; fill: currentColor; }
+
+        .contact-info-list { margin-top: 15px; font-size: 0.95rem; color: #444; }
+        .contact-info-list a { color: var(--primary); font-weight: bold; text-decoration: none; }
+        .contact-info-list a:hover { text-decoration: underline; }
 
         /* Badges Trust */
         .trust-badges { display: flex; justify-content: center; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
@@ -86,25 +105,40 @@
         .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
         .card p { color: #333333; }
 
+        /* Social Proof Section */
+        .social-proof { padding: 50px 0; background: var(--white); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-bottom: 40px; }
+        .stat-card { background: #eef6ff; padding: 20px; border-radius: 12px; border: 1px solid #bbe0ff; }
+        .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--primary); line-height: 1.2; }
+        .stat-label { font-size: 0.9rem; color: #444444; font-weight: 600; margin-top: 5px; }
+        
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .review-card { background: var(--light); padding: 22px; border-radius: 12px; border: 1px solid #cbd5e1; position: relative; }
+        .stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 10px; }
+        .review-text { font-size: 0.92rem; color: #333; font-style: italic; margin-bottom: 15px; line-height: 1.5; }
+        .reviewer-info { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        .reviewer-name { font-weight: 700; color: var(--primary); font-size: 0.9rem; }
+        .reviewer-location { font-size: 0.8rem; color: #666; background: #e2e8f0; padding: 2px 8px; border-radius: 10px; }
+
         /* Keamanan */
-        .security-section { padding: 50px 0; background: var(--white); }
-        .security-box { background: #eef6ff; border-left: 6px solid var(--primary); padding: 30px; border-radius: 8px; }
+        .security-section { padding: 50px 0; background: var(--light); }
+        .security-box { background: #ffffff; border-left: 6px solid var(--primary); padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .security-box h2 { color: var(--primary); margin-bottom: 10px; font-size: 1.4rem; }
         .security-box p { color: #222222; }
 
         /* Syarat Section */
-        .syarat { padding: 50px 0; background: var(--light); }
+        .syarat { padding: 50px 0; background: var(--white); }
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .box-syarat { background: var(--white); padding: 30px; border-radius: 12px; border-top: 5px solid var(--primary); }
+        .box-syarat { background: var(--light); padding: 30px; border-radius: 12px; border-top: 5px solid var(--primary); }
         .box-syarat h3 { margin-bottom: 15px; color: var(--primary); }
         .box-syarat ul { list-style: none; }
         .box-syarat li { margin-bottom: 10px; padding-left: 20px; position: relative; color: #222222; }
         .box-syarat li::before { content: "✓"; position: absolute; left: 0; color: #007a33; font-weight: bold; }
 
         /* FAQ Section */
-        .faq-section { padding: 50px 0; background: var(--white); }
+        .faq-section { padding: 50px 0; background: var(--light); }
         .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .faq-card { background: var(--light); padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; }
+        .faq-card { background: var(--white); padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; }
         .faq-card h3 { color: var(--primary); margin-bottom: 8px; font-size: 1.1rem; }
         .faq-card p { font-size: 0.95rem; color: #333333; }
 
@@ -120,7 +154,9 @@
         }
         .btn-cta-wa:hover { transform: translateY(-3px); background-color: #9a3412; }
         .btn-cta-wa svg { margin-right: 12px; width: 26px; height: 26px; fill: currentColor; }
-        .cta-subtext { margin-top: 15px; font-size: 0.9rem; color: #ffffff; font-weight: 700; }
+        .cta-subtext { margin-top: 20px; font-size: 0.95rem; color: #e2e8f0; font-weight: 500; }
+        .cta-subtext a { color: #38bdf8; text-decoration: none; font-weight: bold; }
+        .cta-subtext a:hover { text-decoration: underline; }
 
         /* Floating Sticky WA */
         .float-wa {
@@ -130,10 +166,32 @@
         }
         .float-wa:hover { background-color: #0b6b2d; }
 
-        /* Footer */
+        /* Footer & Legal Links */
         footer { background: var(--dark); color: #e2e8f0; padding: 40px 0 20px; font-size: 0.9rem; text-align: center; }
-        footer a { color: #ffffff; }
+        footer a { color: #ffffff; text-decoration: underline; cursor: pointer; }
+        .footer-contacts { margin-bottom: 20px; font-size: 0.9rem; color: #cbd5e1; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .footer-contacts a { color: #38bdf8; text-decoration: none; font-weight: 600; }
+        .footer-contacts a:hover { text-decoration: underline; }
+        .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; font-weight: 600; flex-wrap: wrap; }
         .disclaimer { font-size: 0.8rem; color: #cbd5e1; margin-top: 20px; line-height: 1.5; }
+
+        /* Modal / Pop-up Styles for Legal Pages */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7); overflow-y: auto; padding: 20px;
+        }
+        .modal-content {
+            background-color: #fff; color: #222; margin: 40px auto; padding: 30px; border-radius: 12px;
+            max-width: 800px; text-align: left; position: relative; box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        }
+        .close-btn {
+            position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; color: #888; cursor: pointer;
+        }
+        .close-btn:hover { color: #000; }
+        .modal-content h2 { color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid var(--primary); padding-bottom: 8px; }
+        .modal-content h3 { color: #333; margin-top: 15px; margin-bottom: 5px; font-size: 1.1rem; }
+        .modal-content p, .modal-content ul { font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
+        .modal-content ul { padding-left: 20px; }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -141,6 +199,9 @@
             .hero p { font-size: 1rem; }
             .cta-card h2 { font-size: 1.4rem; }
             .btn-cta-wa { font-size: 1.1rem; width: 100%; padding: 16px 20px; }
+            .btn-phone { width: 100%; }
+            .header-contacts { display: none; }
+            .modal-content { padding: 20px; margin: 20px auto; }
         }
     </style>
 
@@ -149,8 +210,10 @@
     {
       "@context": "https://schema.org",
       "@type": "FinancialService",
-      "name": "Pinjama BPKB Jabodetabek - Agen Resmi BFI Finance",
+      "name": "Pinjam BPKB Jabodetabek - Agen Resmi BFI Finance",
       "url": "https://solusidanabpkb.com",
+      "telephone": "+6282360296799",
+      "email": "cs@solusidanabpkb.com",
       "description": "Layanan pinjaman dana tunai jaminan BPKB Mobil dan Motor agen resmi BFI Finance untuk wilayah Jabodetabek.",
       "areaServed": ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"],
       "priceRange": "$$"
@@ -172,7 +235,13 @@
                     <span class="brand-tagline">AGEN RESMI BFI FINANCE</span>
                 </div>
             </a>
-            <span style="font-size: 0.8rem; font-weight: 700; color: #0b5e20; background: #e8f5e9; padding: 4px 10px; border-radius: 12px;">✓ Berizin OJK</span>
+            
+            <div class="header-contacts">
+                <a href="tel:082360296799" class="header-contact-link">
+                    📞 0823-6029-6799
+                </a>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #0b5e20; background: #e8f5e9; padding: 4px 10px; border-radius: 12px;">✓ Berizin OJK</span>
+            </div>
         </div>
     </header>
 
@@ -184,10 +253,21 @@
                 <h1>Pinjaman Dana Cepat BPKB Mobil & Motor Jabodetabek</h1>
                 <p>Solusi dana tunai cepat untuk kebutuhan mendesak, modal usaha, atau renovasi. Tim kami siap jemput berkas/survei langsung ke rumah Anda di wilayah Jakarta, Bogor, Depok, Tangerang, dan Bekasi.</p>
                 
-                <a href="https://wa.me/6282360296799?text=Halo%20saya%20di%20area%20Jabodetabek%20ingin%20simulasi%20pinjaman%20BPKB" class="btn-wa" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94 9.927 9.927 0 0 0-9.989 9.985c0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/></svg>
-                    Konsultasi WhatsApp Gratis
-                </a>
+                <div class="action-group">
+                    <a href="https://wa.me/6282360296799?text=Halo%20saya%20di%20area%20Jabodetabek%20ingin%20simulasi%20pinjaman%20BPKB" class="btn-wa" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/></svg>
+                        Konsultasi WhatsApp
+                    </a>
+                    
+                    <a href="tel:082360296799" class="btn-phone">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        Telepon Langsung
+                    </a>
+                </div>
+
+                <div class="contact-info-list">
+                    Atau hubungi via Email Resmi: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a>
+                </div>
 
                 <div class="trust-badges">
                     <span class="badge">✓ Berizin & Diawasi OJK</span>
@@ -221,6 +301,57 @@
                     <div class="card"><h3>Pencairan Maksimal</h3><p>Taksiran nilai kendaraan tinggi hingga 95% dari harga pasar.</p></div>
                     <div class="card"><h3>BPKB Aman Terjamin</h3><p>Disimpan resmi di brankas kantor cabang BFI Finance.</p></div>
                     <div class="card"><h3>Bisa Bantu Pajak Mati</h3><p>Pajak kendaraan menunggak dapat dibantu potong dari pencairan.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SOCIAL PROOF & TESTIMONI -->
+        <section class="social-proof">
+            <div class="container">
+                <h2 class="section-title">Dipercaya Nasabah Se-Jabodetabek</h2>
+                
+                <!-- Statistik Angka Pencairan -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Pengajuan Disetujui</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1 Hari</div>
+                        <div class="stat-label">Rata-rata Proses Cair</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Transparan & Bebas Biaya Agen</div>
+                    </div>
+                </div>
+
+                <!-- Cuplikan Review / Testimoni -->
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Sangat terbantu untuk modal tambahan usaha warung. Pagi disurvei ke rumah di Bekasi, sorenya dana langsung cair ke rekening. Agennya ramah dan tidak ada potongan aneh-aneh."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Bpk. Hendra S.</span>
+                            <span class="reviewer-location">Bekasi</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"BPKB mobil Avanza saya pajaknya mati 2 tahun, awalnya bingung tapi ternyata bisa diproses lewat BFI Finance dan dibantu potong pencairan. Amanah banget!"</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Ibu Rina K.</span>
+                            <span class="reviewer-location">Tangerang Selatan</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Awalnya ragu karena takut calo/makelar. Tapi agen menjelaskan dengan detail kalau BPKB langsung disimpan di brankas kantor cabang BFI Depok. Mantap, sangat transparan."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Bpk. Agus Prasetyo</span>
+                            <span class="reviewer-location">Depok</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -306,11 +437,14 @@
                     <p>Konsultasikan kebutuhan dana Anda sekarang. Tim kami siap membantu menghitung estimasi pencairan maksimal & angsuran bulanan secara <strong>100% GRATIS</strong> tanpa dipungut biaya apapun!</p>
                     
                     <a href="https://wa.me/6282360296799?text=Halo%20saya%20ingin%20konsultasi%20gratis%20dan%20hitung%20simulasi%20BPKB" class="btn-cta-wa" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94 9.927 9.927 0 0 0-9.989 9.985c0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/></svg>
                         Konsultasi Gratis via WhatsApp
                     </a>
                     
-                    <div class="cta-subtext">⚡ Respon Cepat | Ramah | Bebas Tanya-Tanya</div>
+                    <div class="cta-subtext">
+                        Opsi Kontak Lain: Telepon ke <a href="tel:082360296799">0823-6029-6799</a> | Email: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a><br>
+                        ⚡ Respon Cepat | Ramah | Bebas Tanya-Tanya
+                    </div>
                 </div>
             </div>
         </section>
@@ -324,12 +458,88 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+            <div class="footer-contacts">
+                <span>📞 Telp/WA: <a href="tel:082360296799">0823-6029-6799</a></span>
+                <span>✉️ Email: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a></span>
+            </div>
+
+            <div class="footer-links">
+                <a onclick="openModal('privacyModal')">Kebijakan Privasi</a>
+                <span>|</span>
+                <a onclick="openModal('termsModal')">Syarat & Ketentuan</a>
+            </div>
             <p><strong>solusidanabpkb.com</strong> - Agen Resmi Marketing BFI Finance Area Jabodetabek</p>
             <p class="disclaimer">
                 Disclaimer: solusidanabpkb.com adalah website pemasaran independen mitra agen resmi BFI Finance. Seluruh proses analisis kredit, persetujuan, pencairan dana, dan penyimpanan BPKB dilakukan sepenuhnya di Kantor Cabang PT BFI Finance Indonesia Tbk yang telah berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK).
             </p>
         </div>
     </footer>
+
+    <!-- Modal Kebijakan Privasi -->
+    <div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('privacyModal')">&times;</span>
+            <h2 id="privacyTitle">Kebijakan Privasi (Privacy Policy)</h2>
+            <p>Di <strong>solusidanabpkb.com</strong>, privasi dan keamanan data pribadi calon nasabah adalah prioritas utama kami. Dokumen Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.</p>
+
+            <h3>1. Pengumpulan Informasi Pribadi</h3>
+            <p>Kami mengumpulkan data pribadi yang Anda berikan secara sukarela saat melakukan konsultasi melalui WhatsApp, telepon, email, atau formulir pengajuan, seperti:</p>
+            <ul>
+                <li>Identitas Diri (Nama, KTP, Kartu Keluarga).</li>
+                <li>Kontak (Nomor Telepon/WhatsApp, Alamat Email, Alamat Domisili).</li>
+                <li>Dokumen Kendaraan (STNK, BPKB, foto fisik kendaraan).</li>
+            </ul>
+
+            <h3>2. Penggunaan & Perlindungan Data KTP/KK</h3>
+            <p>Seluruh dokumen identitas (KTP, KK, STNK, BPKB) yang dikirimkan hanya digunakan untuk keperluan <strong>analisis awal dan verifikasi pengajuan kredit pinjaman di PT BFI Finance Indonesia Tbk</strong>.</p>
+            <ul>
+                <li>Data Anda <strong>TIDAK AKAN PERNAH</strong> dijual, disewakan, atau dibagikan kepada pihak ketiga di luar ekosistem resmi BFI Finance.</li>
+                <li>Dokumen identitas Anda disimpan dengan sistem enkripsi dan hanya diakses oleh tim agen resmi yang bertugas.</li>
+            </ul>
+
+            <h3>3. Persetujuan Pengguna</h3>
+            <p>Dengan mengirimkan informasi atau dokumen Anda kepada kami melalui WhatsApp, telepon, email, atau media komunikasi lainnya, Anda dianggap telah menyetujui pengumpulan dan penggunaan informasi sesuai dengan Kebijakan Privasi ini.</p>
+        </div>
+    </div>
+
+    <!-- Modal Syarat & Ketentuan -->
+    <div id="termsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
+            <h2 id="termsTitle">Syarat & Ketentuan (Terms of Service)</h2>
+            <p>Selamat datang di <strong>solusidanabpkb.com</strong>. Dengan mengakses atau menggunakan layanan kami, Anda menyetujui untuk terikat oleh Syarat dan Ketentuan berikut:</p>
+
+            <h3>1. Peran Website</h3>
+            <p>Situs ini dikelola oleh Mitra Agen Resmi Marketing PT BFI Finance Indonesia Tbk. Kami bertindak sebagai perantara pemasaran resmi untuk membantu memfasilitasi proses konsultasi, pengumpulan berkas awal, dan penjadwalan survei.</p>
+
+            <h3>2. Keputusan Persetujuan Pinjaman</h3>
+            <p>Seluruh keputusan mengenai persetujuan kredit, taksiran nilai kendaraan, besar pencairan, suku bunga, dan tenor pinjaman adalah **wewenang mutlak dari PT BFI Finance Indonesia Tbk** berdasarkan hasil analisis kelayakan dan kriteria risiko perusahaan.</p>
+
+            <h3>3. Bebas Biaya Layanan Agen</h3>
+            <p>Seluruh layanan konsultasi, perhitungan simulasi, hingga penjemputan berkas yang dilakukan oleh tim agen kami adalah **100% GRATIS**. Kami tidak pernah meminta pembayaran uang muka (DP) atau biaya transfer langsung ke rekening pribadi agen.</p>
+
+            <h3>4. Keabsahan Dokumen</h3>
+            <p>Pengguna menjamin bahwa seluruh data, KTP, KK, STNK, dan BPKB yang diserahkan adalah sah, legal, dan merupakan milik pemohon yang berhak secara hukum.</p>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
 
 </body>
 </html>
