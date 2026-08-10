@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00529B">
+    <title>Tentang Kami - Solusi Dana BPKB & Sertifikat | BFI Finance</title>
+    <meta name="description" content="Kenali lebih dekat solusidanabpkb.com sebagai mitra pemasaran resmi BFI Finance wilayah Jabodetabek. Melayani pinjaman BPKB Truk, Mobil, Motor, & Sertifikat Rumah.">
+    <link rel="canonical" href="https://solusidanabpkb.com/tentang-kami">
+
+    <!-- Favicon Data URI -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%2300529B'/><rect x='6' y='21' width='5' height='10' rx='2.5' transform='rotate(-25 6 21)' fill='%23FFFFFF' opacity='0.7'/><rect x='14' y='15' width='5' height='16' rx='2.5' transform='rotate(-25 14 15)' fill='%23FFFFFF'/><rect x='22' y='8' width='5' height='23' rx='2.5' transform='rotate(-25 22 8)' fill='%23008827'/></svg>">
+
+    <style>
+        /* CSS Reset & System Font */
+        :root {
+            --primary: #00529B;
+            --secondary: #c2410c; 
+            --wa-green: #0e8337;  
+            --dark: #222222;
+            --light: #F4F7FA;
+            --white: #FFFFFF;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: var(--white); padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+
+        /* Logo */
+        .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-text { display: flex; flex-direction: column; }
+        .brand-name { font-size: 1.25rem; font-weight: 800; font-style: italic; color: #00529B; line-height: 1; }
+        .brand-name span { color: #007a33; }
+        .brand-tagline { font-size: 0.65rem; font-weight: 700; color: #333333; letter-spacing: 0.5px; margin-top: 3px; }
+
+        .header-contacts { display: flex; align-items: center; gap: 12px; }
+        .header-contact-link { font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+        .header-contact-link:hover { text-decoration: underline; }
+
+        /* Hero Section Tentang Kami */
+        .about-hero { background: linear-gradient(135deg, #eef5fc 0%, #ffffff 100%); padding: 50px 0 40px; text-align: center; }
+        .about-hero h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 12px; font-weight: 800; }
+        .about-hero p { font-size: 1.1rem; color: #444; max-width: 700px; margin: 0 auto; }
+        
+        .location-tag {
+            display: inline-block; background: #e0f2fe; color: #0369a1;
+            padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; border: 1px solid #bae6fd;
+        }
+
+        /* Konten Utama Section */
+        .about-content-section { padding: 50px 0; }
+        .about-box { background: var(--light); padding: 35px; border-radius: 12px; border: 1px solid #cbd5e1; margin-bottom: 40px; }
+        .about-box h2 { font-size: 1.6rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
+        .about-box p { font-size: 1rem; color: #333; margin-bottom: 15px; line-height: 1.7; }
+        .about-box p:last-child { margin-bottom: 0; }
+
+        /* Visi Misi & Keunggulan Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .feature-card { background: var(--light); padding: 30px; border-radius: 12px; border: 1px solid #cbd5e1; border-top: 4px solid var(--primary); }
+        .feature-card h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 12px; font-weight: 700; }
+        .feature-card p { font-size: 0.95rem; color: #444; line-height: 1.6; }
+
+        /* Call To Action Box di Bawah */
+        .about-cta { background: linear-gradient(135deg, #003d73 0%, #002244 100%); color: var(--white); padding: 45px 20px; border-radius: 12px; text-align: center; margin-top: 40px; }
+        .about-cta h2 { font-size: 1.6rem; margin-bottom: 12px; font-weight: 700; }
+        .about-cta p { font-size: 1rem; margin-bottom: 25px; color: #e2e8f0; max-width: 650px; margin-left: auto; margin-right: auto; }
+        
+        .btn-wa-action {
+            display: inline-flex; align-items: center; justify-content: center; background-color: var(--wa-green);
+            color: var(--white); font-size: 1.1rem; font-weight: bold; padding: 14px 28px; border-radius: 50px;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(14, 131, 55, 0.4); transition: transform 0.2s;
+        }
+        .btn-wa-action:hover { transform: scale(1.03); background-color: #0b6b2d; }
+        .btn-wa-action svg { margin-right: 10px; width: 22px; height: 22px; fill: currentColor; }
+
+        /* Footer */
+        footer { background: var(--dark); color: #e2e8f0; padding: 40px 0 20px; font-size: 0.9rem; text-align: center; margin-top: 60px; }
+        footer a { color: #ffffff; text-decoration: underline; cursor: pointer; }
+        .footer-contacts { margin-bottom: 20px; font-size: 0.9rem; color: #cbd5e1; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .footer-contacts a { color: #38bdf8; text-decoration: none; font-weight: 600; }
+        .footer-contacts a:hover { text-decoration: underline; }
+        .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; font-weight: 600; flex-wrap: wrap; }
+        .disclaimer { font-size: 0.8rem; color: #cbd5e1; margin-top: 20px; line-height: 1.5; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 1.7rem; }
+            .header-contacts { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrap">
+            <a href="https://solusidanabpkb.com" class="logo-wrap" aria-label="Beranda Utama Solusi Dana">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="4" y="20" width="6" height="12" rx="3" transform="rotate(-25 4 20)" fill="#00529B"/>
+                    <rect x="13" y="14" width="6" height="18" rx="3" transform="rotate(-25 13 14)" fill="#00529B"/>
+                    <rect x="22" y="7" width="6" height="25" rx="3" transform="rotate(-25 22 7)" fill="#007a33"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="brand-name">SOLUSIDANA<span>BPKB</span></span>
+                    <span class="brand-tagline">AGEN RESMI BFI FINANCE</span>
+                </div>
+            </a>
+            
+            <div class="header-contacts">
+                <a href="tel:085286535968" class="header-contact-link">
+                    📞 0852-8653-5968
+                </a>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #0b5e20; background: #e8f5e9; padding: 4px 10px; border-radius: 12px;">✓ Berizin OJK</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section Tentang Kami -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="location-tag">🤝 Mengenal Kami Lebih Dekat</div>
+                <h1>Tentang solusidanabpkb.com</h1>
+                <p>Mitra pemasaran dan agen resmi tepercaya yang menjembatani kebutuhan pinjaman dana tunai berjaminkan BPKB & Sertifikat melalui BFI Finance.</p>
+            </div>
+        </section>
+
+        <!-- Bagian Cerita & Visi -->
+        <section class="about-content-section">
+            <div class="container">
+                <div class="about-box">
+                    <h2>Siapa Kami?</h2>
+                    <p><strong>solusidanabpkb.com</strong> adalah platform layanan informasi dan konsultasi pembiayaan dana tunai resmi di bawah jaringan pemasaran <strong>PT BFI Finance Indonesia Tbk</strong>.</p>
+                    <p>Kami hadir khusus untuk membantu masyarakat serta para pelaku usaha di wilayah Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi) yang membutuhkan solusi likuiditas cepat, aman, dan transparan melalui agunan BPKB Truk, Mobil, Motor, maupun Sertifikat Rumah (SHM/HGB).</p>
+                </div>
+
+                <!-- Keunggulan & Komitmen (Grid 3 Kolom) -->
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🔒 100% Aman & Resmi OJK</h3>
+                        <p>Seluruh proses pengajuan, akad pembiayaan, hingga penyimpanan dokumen jaminan dilakukan secara resmi langsung di kantor cabang PT BFI Finance Indonesia Tbk yang terdaftar dan diawasi OJK.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Proses Cepat & Mudah</h3>
+                        <p>Didukung oleh tim agen berpengalaman yang siap membantu proses verifikasi dokumen, survei fleksibel, hingga estimasi pencairan maksimal dalam waktu singkat.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎯 Solusi Produk Lengkap</h3>
+                        <p>Mulai dari pembiayaan kendaraan niaga (Truk/Pick Up), kendaraan pribadi, sertifikat properti, hingga fasilitas Take Over kredit dari leasing atau bank lain.</p>
+                    </div>
+                </div>
+
+                <!-- Kotak CTA di Bawah -->
+                <div class="about-cta">
+                    <h2>Butuh Konsultasi Finansial atau Pengajuan Dana Cepat?</h2>
+                    <p>Jangan ragu untuk mendiskusikan kebutuhan modal usaha atau dana darurat Anda bersama tim ahli kami secara gratis.</p>
+                    <a href="https://wa.me/6285286535968?text=Halo%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20pinjaman" class="btn-wa-action" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/></svg>
+                        Hubungi Tim Kami via WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-contacts">
+                <span>📞 Telp/WA: <a href="tel:085286535968">0852-8653-5968</a></span>
+                <span>✉️ Email: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a></span>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://solusidanabpkb.com">Beranda Utama</a>
+                <span>|</span>
+                <a href="https://solusidanabpkb.com/produk">Produk Pembiayaan</a>
+                <span>|</span>
+                <a href="https://solusidanabpkb.com/kontak">Hubungi Kami</a>
+            </div>
+            <p><strong>solusidanabpkb.com</strong> - Halaman Profil Resmi Mitra Agen BFI Finance</p>
+            <p class="disclaimer">
+                Disclaimer: Seluruh proses analisis kredit, persetujuan, pencairan dana, dan penyimpanan jaminan dilakukan sepenuhnya di Kantor Cabang PT BFI Finance Indonesia Tbk yang telah berizin dan diawasi oleh OJK.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
