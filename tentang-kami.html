@@ -38,20 +38,28 @@
         }
         .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        /* Header */
-        header { background: var(--white); padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
-        .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+        /* Header & Navbar */
+        header { background: var(--white); padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .nav-wrap { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
         /* Logo */
         .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo-text { display: flex; flex-direction: column; }
-        .brand-name { font-size: 1.25rem; font-weight: 800; font-style: italic; color: #00529B; line-height: 1; }
+        .brand-name { font-size: 1.15rem; font-weight: 800; font-style: italic; color: #00529B; line-height: 1; }
         .brand-name span { color: #007a33; }
-        .brand-tagline { font-size: 0.65rem; font-weight: 700; color: #333333; letter-spacing: 0.5px; margin-top: 3px; }
+        .brand-tagline { font-size: 0.6rem; font-weight: 700; color: #333333; letter-spacing: 0.5px; margin-top: 3px; }
+
+        /* Main Menu Links (Tanpa Menu Produk) */
+        .main-menu { display: flex; align-items: center; gap: 20px; list-style: none; }
+        .main-menu a { font-size: 0.9rem; font-weight: 600; color: #222222; text-decoration: none; transition: color 0.2s; }
+        .main-menu a:hover, .main-menu a.active { color: #00529B; }
 
         .header-contacts { display: flex; align-items: center; gap: 12px; }
         .header-contact-link { font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px; }
         .header-contact-link:hover { text-decoration: underline; }
+
+        /* Mobile Menu Toggle Button */
+        .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #00529B; }
 
         /* Hero Section Tentang Kami */
         .about-hero { background: linear-gradient(135deg, #eef5fc 0%, #ffffff 100%); padding: 50px 0 40px; text-align: center; }
@@ -98,7 +106,15 @@
         .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; font-weight: 600; flex-wrap: wrap; }
         .disclaimer { font-size: 0.8rem; color: #cbd5e1; margin-top: 20px; line-height: 1.5; }
 
-        /* Responsive Breakpoints */
+        /* Responsive Breakpoints & Mobile Navbar */
+        @media (max-width: 900px) {
+            .main-menu {
+                display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+                background: #FFFFFF; padding: 20px; border-bottom: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .main-menu.active { display: flex; }
+            .menu-toggle { display: block; }
+        }
         @media (max-width: 768px) {
             .about-hero h1 { font-size: 1.7rem; }
             .header-contacts { display: none; }
@@ -107,9 +123,9 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header & Navbar -->
     <header>
-        <div class="container nav-wrap">
+        <div class="nav-wrap">
             <a href="https://solusidanabpkb.com" class="logo-wrap" aria-label="Beranda Utama Solusi Dana">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <rect x="4" y="20" width="6" height="12" rx="3" transform="rotate(-25 4 20)" fill="#00529B"/>
@@ -121,12 +137,26 @@
                     <span class="brand-tagline">AGEN RESMI BFI FINANCE</span>
                 </div>
             </a>
+
+            <!-- Menu Navigasi Utama (Menu Produk Dihapus) -->
+            <ul class="main-menu" id="mainMenu">
+                <li><a href="https://solusidanabpkb.com">Beranda</a></li>
+                <li><a href="https://solusidanabpkb.com/wilayah-layanan">Wilayah Layanan</a></li>
+                <li><a href="https://solusidanabpkb.com/tentang-kami" class="active">Tentang Kami</a></li>
+                <li><a href="https://solusidanabpkb.com/faq">FAQ</a></li>
+                <li><a href="https://solusidanabpkb.com/kontak">Kontak</a></li>
+            </ul>
             
-            <div class="header-contacts">
-                <a href="tel:085286535968" class="header-contact-link">
-                    📞 0852-8653-5968
-                </a>
-                <span style="font-size: 0.8rem; font-weight: 700; color: #0b5e20; background: #e8f5e9; padding: 4px 10px; border-radius: 12px;">✓ Berizin OJK</span>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="header-contacts">
+                    <a href="tel:085286535968" class="header-contact-link">
+                        📞 0852-8653-5968
+                    </a>
+                </div>
+                <!-- Hamburger Toggle untuk Mobile -->
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Buka Menu">
+                    ☰
+                </button>
             </div>
         </div>
     </header>
@@ -191,7 +221,7 @@
             <div class="footer-links">
                 <a href="https://solusidanabpkb.com">Beranda Utama</a>
                 <span>|</span>
-                <a href="https://solusidanabpkb.com/produk">Produk Pembiayaan</a>
+                <a href="https://solusidanabpkb.com/tentang-kami">Tentang Kami</a>
                 <span>|</span>
                 <a href="https://solusidanabpkb.com/kontak">Hubungi Kami</a>
             </div>
@@ -201,6 +231,14 @@
             </p>
         </div>
     </footer>
+
+    <!-- Script Interaktif Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mainMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
