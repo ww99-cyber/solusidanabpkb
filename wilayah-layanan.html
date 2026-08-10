@@ -8,16 +8,24 @@
     <meta name="description" content="Cakupan wilayah layanan pinjaman dana tunai jaminan BPKB dan Sertifikat Rumah resmi BFI Finance mencakup Jakarta, Bogor, Depok, Tangerang, dan Bekasi secara lengkap.">
     <link rel="canonical" href="https://solusidanabpkb.com/wilayah-layanan">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY4RH2FJ97"></script>
+   <!-- Google tag (gtag.js) - Lazy Loaded untuk Menghilangkan Long Task & Unused JS -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      // Muat skrip Analytics hanya setelah halaman selesai dimuat sepenuhnya atau pengguna mulai berinteraksi
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-WY4RH2FJ97';
+          document.head.appendChild(script);
 
-      gtag('config', 'G-WY4RH2FJ97');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-WY4RH2FJ97');
+        }, 3500); // Penundaan 3.5 detik agar FCP & TBT benar-benar aman
+      });
     </script>
-
     <!-- Favicon Data URI -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%2300529B'/><rect x='6' y='21' width='5' height='10' rx='2.5' transform='rotate(-25 6 21)' fill='%23FFFFFF' opacity='0.7'/><rect x='14' y='15' width='5' height='16' rx='2.5' transform='rotate(-25 14 15)' fill='%23FFFFFF'/><rect x='22' y='8' width='5' height='23' rx='2.5' transform='rotate(-25 22 8)' fill='%23008827'/></svg>">
 
