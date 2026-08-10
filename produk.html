@@ -65,7 +65,7 @@
         .hero h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
         .hero p { font-size: 1.1rem; color: #222222; margin-bottom: 25px; max-width: 750px; margin-left: auto; margin-right: auto; }
         
-        /* Hero Image Styling (Dioptimalkan untuk LCP & Mencegah Layout Shift) */
+        /* Hero Image Styling (Dioptimalkan untuk mencegah CLS / Layout Shift) */
         .hero-img-container {
             max-width: 850px;
             margin: 0 auto 30px auto;
@@ -75,6 +75,9 @@
             border: 2px solid #ffffff;
             aspect-ratio: 850 / 400;
             background-color: #f0f4f8;
+            width: 100%;
+            height: auto;
+            contain: layout size; /* Menstabilkan ukuran render untuk menghindari pergeseran layout */
         }
         .hero-img-container img {
             width: 100%;
@@ -251,7 +254,7 @@
                 <h1>Produk Pinjaman BPKB Truk, Mobil, Motor, Sertifikat Rumah & Take Over</h1>
                 <p>Solusi pendanaan lengkap untuk modal usaha niaga, logistik truk, kendaraan pribadi, properti, hingga pemindahan kredit dari leasing/bank lain.</p>
                 
-                <!-- ELEMEN GAMBAR UTAMA (HERO IMAGE) - Dioptimalkan untuk LCP -->
+                <!-- ELEMEN GAMBAR UTAMA (HERO IMAGE) - Dioptimalkan untuk LCP & CLS -->
                 <div class="hero-img-container">
                     <img src="images/hero-produk.webp" alt="Ilustrasi Layanan Pembiayaan BPKB Mobil, Motor, Truk dan Sertifikat BFI Finance" width="850" height="400" fetchpriority="high">
                 </div>
@@ -406,7 +409,7 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-card">
-                    <h2>Tertarik dengan Produk Mobil / Motot / Truk atau Jaminan Lainnya? Konsultasikan Sekarang!</h2>
+                    <h2>Tertarik dengan Produk Mobil / Motor / Truk atau Jaminan Lainnya? Konsultasikan Sekarang!</h2>
                     <p>Dapatkan perhitungan simulasi akurat sesuai jenis kendaraan atau properti Anda secara <strong>100% GRATIS</strong> melalui layanan WhatsApp resmi kami.</p>
                     
                     <a href="https://wa.me/6285286535968?text=Halo%20saya%20ingin%20mengajukan%20produk%20pinjaman%20BPKB%20Truk%20atau%20jaminan%20lainnya" class="btn-cta-wa" target="_blank" rel="noopener noreferrer">
