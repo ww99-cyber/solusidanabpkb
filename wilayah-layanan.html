@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00529B">
+    <title>Wilayah Layanan Pinjaman BPKB & Sertifikat - BFI Finance Jabodetabek</title>
+    <meta name="description" content="Cakupan wilayah layanan pinjaman dana tunai jaminan BPKB dan Sertifikat Rumah resmi BFI Finance mencakup seluruh wilayah Jakarta, Bogor, Depok, Tangerang, dan Bekasi.">
+    <link rel="canonical" href="https://solusidanabpkb.com/wilayah-layanan">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY4RH2FJ97"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WY4RH2FJ97');
+    </script>
+
+    <!-- Favicon Data URI -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%2300529B'/><rect x='6' y='21' width='5' height='10' rx='2.5' transform='rotate(-25 6 21)' fill='%23FFFFFF' opacity='0.7'/><rect x='14' y='15' width='5' height='16' rx='2.5' transform='rotate(-25 14 15)' fill='%23FFFFFF'/><rect x='22' y='8' width='5' height='23' rx='2.5' transform='rotate(-25 22 8)' fill='%23008827'/></svg>">
+
+    <style>
+        /* CSS Reset & System Font */
+        :root {
+            --primary: #00529B;
+            --secondary: #c2410c; 
+            --wa-green: #0e8337;  
+            --dark: #222222;
+            --light: #F4F7FA;
+            --white: #FFFFFF;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: var(--white); padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
+
+        /* Logo */
+        .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-text { display: flex; flex-direction: column; }
+        .brand-name { font-size: 1.25rem; font-weight: 800; font-style: italic; color: #00529B; line-height: 1; }
+        .brand-name span { color: #007a33; }
+        .brand-tagline { font-size: 0.65rem; font-weight: 700; color: #333333; letter-spacing: 0.5px; margin-top: 3px; }
+
+        .header-contacts { display: flex; align-items: center; gap: 12px; }
+        .header-contact-link { font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+        .header-contact-link:hover { text-decoration: underline; }
+
+        /* Hero Section */
+        .coverage-hero { background: linear-gradient(135deg, #eef5fc 0%, #ffffff 100%); padding: 50px 0 40px; text-align: center; }
+        .coverage-hero h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 12px; font-weight: 800; }
+        .coverage-hero p { font-size: 1.1rem; color: #444; max-width: 700px; margin: 0 auto; }
+        
+        .location-tag {
+            display: inline-block; background: #e0f2fe; color: #0369a1;
+            padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; border: 1px solid #bae6fd;
+        }
+
+        /* Content Section */
+        .coverage-section { padding: 50px 0; }
+        .intro-text { text-align: center; max-width: 750px; margin: 0 auto 40px; font-size: 1.05rem; color: #333; }
+        
+        /* Grid Wilayah */
+        .coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .coverage-card { background: var(--light); padding: 30px; border-radius: 12px; border: 1px solid #cbd5e1; border-top: 4px solid var(--primary); }
+        .coverage-card h3 { font-size: 1.25rem; color: var(--primary); margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .coverage-card p { font-size: 0.95rem; color: #444; margin-bottom: 15px; line-height: 1.6; }
+        .coverage-list { list-style-type: none; padding-left: 0; }
+        .coverage-list li { font-size: 0.9rem; color: #333; padding: 4px 0; display: flex; align-items: center; gap: 6px; }
+        .coverage-list li::before { content: "✓"; color: var(--wa-green); font-weight: bold; }
+
+        /* Benefit Layanan Antar Jemput */
+        .service-benefit { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 12px; padding: 30px; margin-bottom: 40px; text-align: center; }
+        .service-benefit h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
+        .service-benefit p { font-size: 0.95rem; color: #555; max-width: 700px; margin: 0 auto; }
+
+        /* Call To Action Box */
+        .coverage-cta { background: linear-gradient(135deg, #003d73 0%, #002244 100%); color: var(--white); padding: 45px 20px; border-radius: 12px; text-align: center; }
+        .coverage-cta h2 { font-size: 1.6rem; margin-bottom: 12px; font-weight: 700; }
+        .coverage-cta p { font-size: 1rem; margin-bottom: 25px; color: #e2e8f0; max-width: 650px; margin-left: auto; margin-right: auto; }
+        
+        .btn-wa-action {
+            display: inline-flex; align-items: center; justify-content: center; background-color: var(--wa-green);
+            color: var(--white); font-size: 1.1rem; font-weight: bold; padding: 14px 28px; border-radius: 50px;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(14, 131, 55, 0.4); transition: transform 0.2s;
+        }
+        .btn-wa-action:hover { transform: scale(1.03); background-color: #0b6b2d; }
+        .btn-wa-action svg { margin-right: 10px; width: 22px; height: 22px; fill: currentColor; }
+
+        /* Menu Navigasi Bawah */
+        .bottom-nav-section { background-color: #eef5fc; padding: 30px 0; border-top: 1px solid #d0e8fc; text-align: center; margin-top: 40px; }
+        .bottom-nav-section h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
+        .bottom-menu-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .bottom-menu-links a {
+            background-color: var(--white); color: var(--primary); padding: 8px 18px; border-radius: 20px;
+            font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 1px solid #cbd5e1; box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: all 0.2s;
+        }
+        .bottom-menu-links a:hover { background-color: var(--primary); color: var(--white); border-color: var(--primary); }
+
+        /* Footer */
+        footer { background: var(--dark); color: #e2e8f0; padding: 40px 0 20px; font-size: 0.9rem; text-align: center; }
+        footer a { color: #ffffff; text-decoration: underline; cursor: pointer; }
+        .footer-contacts { margin-bottom: 20px; font-size: 0.9rem; color: #cbd5e1; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .footer-contacts a { color: #38bdf8; text-decoration: none; font-weight: 600; }
+        .footer-contacts a:hover { text-decoration: underline; }
+        .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; font-weight: 600; flex-wrap: wrap; }
+        .disclaimer { font-size: 0.8rem; color: #cbd5e1; margin-top: 20px; line-height: 1.5; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .coverage-hero h1 { font-size: 1.7rem; }
+            .header-contacts { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrap">
+            <a href="https://solusidanabpkb.com" class="logo-wrap" aria-label="Beranda Utama Solusi Dana">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="4" y="20" width="6" height="12" rx="3" transform="rotate(-25 4 20)" fill="#00529B"/>
+                    <rect x="13" y="14" width="6" height="18" rx="3" transform="rotate(-25 13 14)" fill="#00529B"/>
+                    <rect x="22" y="7" width="6" height="25" rx="3" transform="rotate(-25 22 7)" fill="#007a33"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="brand-name">SOLUSIDANA<span>BPKB</span></span>
+                    <span class="brand-tagline">AGEN RESMI BFI FINANCE</span>
+                </div>
+            </a>
+            
+            <div class="header-contacts">
+                <a href="tel:085286535968" class="header-contact-link">
+                    📞 0852-8653-5968
+                </a>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #0b5e20; background: #e8f5e9; padding: 4px 10px; border-radius: 12px;">✓ Berizin OJK</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="coverage-hero">
+            <div class="container">
+                <div class="location-tag">📍 Jangkauan Operasional Luas & Terpercaya</div>
+                <h1>Wilayah Layanan Pinjaman BFI Finance Jabodetabek</h1>
+                <p>Kami melayani pengajuan dana tunai jaminan BPKB Mobil, Motor, Truk, dan Sertifikat Rumah di seluruh wilayah Jakarta, Bogor, Depok, Tangerang, dan Bekasi.</p>
+            </div>
+        </section>
+
+        <!-- Main Coverage Content -->
+        <section class="coverage-section">
+            <div class="container">
+                <p class="intro-text">
+                    Sebagai mitra pemasaran resmi PT BFI Finance Indonesia Tbk, tim agen kami siap menjembatani dan memproses kebutuhan pembiayaan Anda dengan jangkauan area penjemputan dokumen dan survei yang fleksibel di seluruh titik Jabodetabek.
+                </p>
+
+                <!-- Grid Wilayah -->
+                <div class="coverage-grid">
+                    
+                    <div class="coverage-card">
+                        <h3>🏙️ DKI Jakarta</h3>
+                        <p>Melayani seluruh kota administrasi di ibu kota untuk pinjaman dana tunai cepat dan take over kredit kendaraan maupun properti.</p>
+                        <ul class="coverage-list">
+                            <li>Jakarta Pusat, Selatan, & Timur</li>
+                            <li>Jakarta Barat & Jakarta Utara</li>
+                            <li>Layanan survei ke rumah/kantor</li>
+                        </ul>
+                    </div>
+
+                    <div class="coverage-card">
+                        <h3>🌆 Kota & Kabupaten Tangerang</h3>
+                        <p>Pusat industri dan hunian padat yang menjadi salah satu area utama layanan cepat tanggap tim pembiayaan kami.</p>
+                        <ul class="coverage-list">
+                            <li>Tangerang Kota & Tangerang Selatan</li>
+                            <li>Kabupaten Tangerang (Cikupa, Tigaraksa, BSD, dll)</li>
+                            <li>Proses verifikasi kilat</li>
+                        </ul>
+                    </div>
+
+                    <div class="coverage-card">
+                        <h3>🏙️ Bekasi & Depok</h3>
+                        <p>Menjangkau kawasan penyangga timur dan selatan Jakarta untuk kebutuhan modal usaha maupun dana darurat Anda.</p>
+                        <ul class="coverage-list">
+                            <li>Kota Bekasi & Kabupaten Bekasi (Cikarang, Tambun)</li>
+                            <li>Kota Depok & Cimanggis</li>
+                            <li>Bunga kompetitif & tenor fleksibel</li>
+                        </ul>
+                    </div>
+
+                    <div class="coverage-card">
+                        <h3>🌆 Bogor & Sekitarnya</h3>
+                        <p>Melayani area Bogor kota maupun kabupaten dengan dukungan jaringan kantor cabang resmi BFI Finance terdekat.</p>
+                        <ul class="coverage-list">
+                            <li>Bogor Kota & Kabupaten Bogor (Cibinong, Cileungsi)</li>
+                            <li>Pencairan optimal jaminan BPKB/Sertifikat</li>
+                            <li>Konsultasi gratis via WhatsApp</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Info Benefit -->
+                <div class="service-benefit">
+                    <h2>Kemudahan Layanan Langsung di Lokasi Anda</h2>
+                    <p>Tidak punya waktu untuk datang ke kantor cabang? Tim surveyor dan marketing profesional kami siap mendatangi alamat rumah atau tempat usaha Anda di wilayah Jabodetabek untuk melakukan verifikasi berkas secara gratis dan aman.</p>
+                </div>
+
+                <!-- Call To Action Box -->
+                <div class="coverage-cta">
+                    <h2>Berada di Wilayah Jabodetabek? Ajukan Pinjaman Anda Sekarang!</h2>
+                    <p>Dapatkan estimasi pencairan maksimal dan konsultasikan kebutuhan dana Anda bersama tim ahli kami tanpa dipungut biaya.</p>
+                    <a href="https://wa.me/6285286535968?text=Halo%20saya%20berada%20di%20Jabodetabek%20ingin%20mengajukan%20pinjaman" class="btn-wa-action" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/></svg>
+                        Konsultasi via WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Menu Navigasi Bawah -->
+        <section class="bottom-nav-section">
+            <div class="container">
+                <h3>Jelajahi Halaman Lainnya</h3>
+                <div class="bottom-menu-links">
+                    <a href="https://solusidanabpkb.com">Beranda Utama</a>
+                    <a href="https://solusidanabpkb.com/produk">Produk Pembiayaan</a>
+                    <a href="https://solusidanabpkb.com/tentang-kami">Tentang Kami</a>
+                    <a href="https://solusidanabpkb.com/faq">FAQ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-contacts">
+                <span>📞 Telp/WA: <a href="tel:085286535968">0852-8653-5968</a></span>
+                <span>✉️ Email: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a></span>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://solusidanabpkb.com">Beranda Utama</a>
+                <span>|</span>
+                <a href="https://solusidanabpkb.com/produk">Produk Pembiayaan</a>
+                <span>|</span>
+                <a href="https://solusidanabpkb.com/tentang-kami">Tentang Kami</a>
+                <span>|</span>
+                <a href="https://solusidanabpkb.com/faq">FAQ</a>
+            </div>
+            <p><strong>solusidanabpkb.com</strong> - Halaman Wilayah Layanan Resmi Mitra Agen BFI Finance</p>
+            <p class="disclaimer">
+                Disclaimer: Seluruh proses analisis kredit, persetujuan, pencairan dana, dan penyimpanan jaminan dilakukan sepenuhnya di Kantor Cabang PT BFI Finance Indonesia Tbk yang telah berizin dan diawasi oleh OJK.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
