@@ -46,20 +46,28 @@
         }
         .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        /* Header */
-        header { background: var(--white); padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        /* Header & Navbar */
+        header { background: var(--white); padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
         .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
 
         /* CSS Logo */
         .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo-text { display: flex; flex-direction: column; }
-        .brand-name { font-size: 1.25rem; font-weight: 800; font-style: italic; color: #00529B; line-height: 1; }
+        .brand-name { font-size: 1.15rem; font-weight: 800; font-style: italic; color: #00529B; line-height: 1; }
         .brand-name span { color: #007a33; }
-        .brand-tagline { font-size: 0.65rem; font-weight: 700; color: #333333; letter-spacing: 0.5px; margin-top: 3px; }
+        .brand-tagline { font-size: 0.6rem; font-weight: 700; color: #333333; letter-spacing: 0.5px; margin-top: 3px; }
+
+        /* Main Menu Links */
+        .main-menu { display: flex; align-items: center; gap: 20px; list-style: none; }
+        .main-menu a { font-size: 0.9rem; font-weight: 600; color: var(--dark); text-decoration: none; transition: color 0.2s; }
+        .main-menu a:hover, .main-menu a.active { color: var(--primary); }
 
         .header-contacts { display: flex; align-items: center; gap: 12px; }
         .header-contact-link { font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px; }
         .header-contact-link:hover { text-decoration: underline; }
+
+        /* Mobile Menu Toggle Button */
+        .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
 
         /* Hero Section */
         .hero { background: linear-gradient(135deg, #eef5fc 0%, #ffffff 100%); padding: 50px 0; text-align: center; }
@@ -141,10 +149,7 @@
         .review-text { font-size: 0.92rem; color: #333; font-style: italic; margin-bottom: 15px; line-height: 1.5; }
         .reviewer-info { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 10px; }
         .reviewer-name { font-weight: 700; color: var(--primary); font-size: 0.9rem; }
-        
-        /* FIX CONTRAST: Mengubah #0284c7 ke #0369a1 agar lolos rasio kontras WCAG */
         .reviewer-unit { font-size: 0.8rem; font-weight: 700; color: #0369a1; margin-top: 2px; }
-        
         .reviewer-location { font-size: 0.8rem; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 10px; white-space: nowrap; font-weight: 600; }
 
         /* Keamanan */
@@ -202,7 +207,7 @@
         .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; font-weight: 600; flex-wrap: wrap; }
         .disclaimer { font-size: 0.8rem; color: #cbd5e1; margin-top: 20px; line-height: 1.5; }
 
-        /* Modal / Pop-up Styles for Legal Pages */
+        /* Modal Styles */
         .modal {
             display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.7); overflow-y: auto; padding: 20px;
@@ -220,7 +225,16 @@
         .modal-content p, .modal-content ul { font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
         .modal-content ul { padding-left: 20px; }
 
-        /* Responsive */
+        /* Responsive Navbar */
+        @media (max-width: 900px) {
+            .main-menu {
+                display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--white); padding: 20px; border-bottom: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .main-menu.active { display: flex; }
+            .menu-toggle { display: block; }
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.7rem; }
             .hero p { font-size: 1rem; }
@@ -240,7 +254,7 @@
       "@type": "FinancialService",
       "name": "Pinjam BPKB Jabodetabek - Agen Resmi BFI Finance",
       "url": "https://solusidanabpkb.com",
-      "telephone": "+6282360296799",
+      "telephone": "+6285286535968",
       "email": "cs@solusidanabpkb.com",
       "description": "Layanan pinjaman dana tunai jaminan BPKB Mobil dan Motor agen resmi BFI Finance untuk wilayah Jabodetabek.",
       "areaServed": ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"],
@@ -250,9 +264,10 @@
 </head>
 <body>
 
+    <!-- Header & Navbar -->
     <header>
         <div class="container nav-wrap">
-            <a href="#" class="logo-wrap" aria-label="Beranda Utama Solusi Dana">
+            <a href="https://solusidanabpkb.com" class="logo-wrap" aria-label="Beranda Utama Solusi Dana">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <rect x="4" y="20" width="6" height="12" rx="3" transform="rotate(-25 4 20)" fill="#00529B"/>
                     <rect x="13" y="14" width="6" height="18" rx="3" transform="rotate(-25 13 14)" fill="#00529B"/>
@@ -263,12 +278,26 @@
                     <span class="brand-tagline">AGEN RESMI BFI FINANCE</span>
                 </div>
             </a>
+
+            <!-- Menu Navigasi Utama -->
+            <ul class="main-menu" id="mainMenu">
+                <li><a href="https://solusidanabpkb.com" class="active">Beranda</a></li>
+                <li><a href="https://solusidanabpkb.com/produk">Produk Pembiayaan</a></li>
+                <li><a href="https://solusidanabpkb.com/wilayah-layanan">Wilayah Layanan</a></li>
+                <li><a href="https://solusidanabpkb.com/tentang-kami">Tentang Kami</a></li>
+                <li><a href="https://solusidanabpkb.com/faq">FAQ</a></li>
+            </ul>
             
-            <div class="header-contacts">
-                <a href="tel:082360296799" class="header-contact-link">
-                    📞 0852-8653-5968
-                </a>
-                <span style="font-size: 0.8rem; font-weight: 700; color: #0b5e20; background: #e8f5e9; padding: 4px 10px; border-radius: 12px;">✓ Berizin OJK</span>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="header-contacts">
+                    <a href="tel:085286535968" class="header-contact-link">
+                        📞 0852-8653-5968
+                    </a>
+                </div>
+                <!-- Hamburger Toggle untuk Mobile -->
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Buka Menu">
+                    ☰
+                </button>
             </div>
         </div>
     </header>
@@ -287,7 +316,7 @@
                         Konsultasi WhatsApp
                     </a>
                     
-                    <a href="tel:082360296799" class="btn-phone">
+                    <a href="tel:085286535968" class="btn-phone">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                         Telepon Langsung
                     </a>
@@ -404,7 +433,6 @@
             <div class="container">
                 <h2 class="section-title">Dipercaya Nasabah Se-Jabodetabek</h2>
                 
-                <!-- Statistik Angka Pencairan -->
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">500+</div>
@@ -420,7 +448,6 @@
                     </div>
                 </div>
 
-                <!-- Review / Testimoni -->
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="stars">★★★★★</div>
@@ -545,7 +572,7 @@
                     </a>
                     
                     <div class="cta-subtext">
-                        Opsi Kontak Lain: Telepon ke <a href="tel:0885286535968">0852-8653-5968</a> | Email: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a><br>
+                        Opsi Kontak Lain: Telepon ke <a href="tel:085286535968">0852-8653-5968</a> | Email: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a><br>
                         ⚡ Respon Cepat | Ramah | Bebas Tanya-Tanya
                     </div>
                 </div>
@@ -562,12 +589,17 @@
     <footer>
         <div class="container">
             <div class="footer-contacts">
-                <span>📞 Telp/WA: <a href="tel:0885286535968">0852-8653-5968</a></span>
+                <span>📞 Telp/WA: <a href="tel:085286535968">0852-8653-5968</a></span>
                 <span>✉️ Email: <a href="mailto:cs@solusidanabpkb.com">cs@solusidanabpkb.com</a></span>
             </div>
 
-            <!-- FIX CRAWLABLE LINKS: Ditambahkan href="javascript:void(0)" dan role="button" -->
             <div class="footer-links">
+                <a href="https://solusidanabpkb.com">Beranda Utama</a>
+                <span>|</span>
+                <a href="https://solusidanabpkb.com/produk">Produk Pembiayaan</a>
+                <span>|</span>
+                <a href="https://solusidanabpkb.com/wilayah-layanan">Wilayah Layanan</a>
+                <span>|</span>
                 <a href="javascript:void(0)" role="button" onclick="openModal('privacyModal')">Kebijakan Privasi</a>
                 <span>|</span>
                 <a href="javascript:void(0)" role="button" onclick="openModal('termsModal')">Syarat & Ketentuan</a>
@@ -627,8 +659,13 @@
         </div>
     </div>
 
-    <!-- Script Modal -->
+    <!-- Script Navbar & Modal -->
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mainMenu');
+            menu.classList.toggle('active');
+        }
+
         function openModal(modalId) {
             document.getElementById(modalId).style.display = "block";
             document.body.style.overflow = "hidden";
