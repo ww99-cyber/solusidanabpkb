@@ -683,5 +683,25 @@
         }
     </script>
 
+    <!-- Script Integrasi WhatsApp ke Halaman Thank You -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Targetkan semua link yang mengarah ke nomor WhatsApp (wa.me)
+            const waLinks = document.querySelectorAll('a[href*="wa.me"]');
+            
+            waLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    // Cek apakah link membuka target _blank (tab baru)
+                    if (this.getAttribute('target') === '_blank') {
+                        // Biarkan WhatsApp terbuka di tab baru, lalu arahkan halaman ini ke thank-you.html setelah 1 detik
+                        setTimeout(function() {
+                            window.location.href = 'https://solusidanabpkb.com/thank-you.html';
+                        }, 1000);
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
