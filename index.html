@@ -167,6 +167,32 @@
         .box-syarat li { margin-bottom: 10px; padding-left: 20px; position: relative; color: #222222; }
         .box-syarat li::before { content: "✓"; position: absolute; left: 0; color: #007a33; font-weight: bold; }
 
+        /* Proses Pengajuan Section */
+        .steps-section { padding: 50px 0; background: var(--white); }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+        .step-card { background: var(--light); padding: 25px 20px; border-radius: 12px; text-align: center; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+        .step-card:hover { transform: translateY(-5px); }
+        .step-number { width: 50px; height: 50px; background: var(--secondary); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin: 0 auto 15px; box-shadow: 0 4px 10px rgba(194, 65, 12, 0.3); }
+        .step-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.15rem; }
+        .step-card p { font-size: 0.92rem; color: #333333; line-height: 1.5; }
+
+        /* Form Pengajuan Section (Formspree) */
+        .form-section { padding: 60px 0; background: var(--light); }
+        .form-card-wrap { background: var(--white); max-width: 700px; margin: 0 auto; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-top: 6px solid var(--primary); }
+        .form-card-wrap h2 { color: var(--primary); text-align: center; margin-bottom: 10px; font-size: 1.7rem; }
+        .form-card-wrap p.form-desc { text-align: center; color: #555; margin-bottom: 30px; font-size: 0.95rem; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; color: #333; margin-bottom: 8px; font-size: 0.92rem; }
+        .form-control { width: 100%; padding: 14px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; color: #333; background: #fff; transition: border-color 0.2s; }
+        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 82, 155, 0.15); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .btn-submit-form { display: block; width: 100%; background-color: var(--primary); color: var(--white); font-size: 1.15rem; font-weight: bold; padding: 16px; border: none; border-radius: 50px; cursor: pointer; text-align: center; box-shadow: 0 4px 15px rgba(0, 82, 155, 0.3); transition: background 0.2s, transform 0.2s; margin-top: 10px; }
+        .btn-submit-form:hover { background-color: #003d73; transform: translateY(-2px); }
+        @media(max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .form-card-wrap { padding: 20px; }
+        }
+
         /* FAQ Section */
         .faq-section { padding: 50px 0; background: var(--white); }
         .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
@@ -525,7 +551,93 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        <!-- Proses Langkah Pengajuan -->
+        <section class="steps-section">
+            <div class="container">
+                <h2 class="section-title">4 Langkah Mudah Pengajuan</h2>
+                <p style="text-align: center; color: #555555; margin-bottom: 25px; margin-top: -20px; font-size: 0.95rem;">Proses cepat, aman, dan transparan dari awal hingga dana cair ke rekening Anda.</p>
+                
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Konsultasi & Simulasi</h3>
+                        <p>Hubungi kami via WhatsApp untuk konsultasi awal. Tim kami akan menghitungkan estimasi maksimal pencairan secara gratis.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Siapkan Berkas & Survei</h3>
+                        <p>Siapkan dokumen yang dibutuhkan. Tim surveyor resmi kami akan datang ke rumah Anda untuk cek fisik kendaraan.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Proses Analisa</h3>
+                        <p>Data Anda akan langsung diproses dan dianalisa oleh tim BFI Finance. Proses persetujuan cepat dan tanpa ribet.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Pencairan Dana</h3>
+                        <p>Setelah disetujui, dana langsung ditransfer utuh ke rekening Anda. BPKB aman disimpan di brankas BFI Finance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN FORMULIR PENGAJUAN (FORMSPREE KE EMAIL) - SEKARANG DI ATAS FAQ -->
+        <section class="form-section" id="form-pengajuan">
+            <div class="container">
+                <div class="form-card-wrap">
+                    <h2>Formulir Pengajuan Cepat</h2>
+                    <p class="form-desc">Isi data singkat di bawah ini. Data Anda akan langsung terkirim ke email kami dan otomatis diproses.</p>
+                    
+                    <!-- Ganti URL di bawah dengan Endpoint Formspree Anda -->
+                    <form action="https://formspree.io/f/xoeawpob" method="POST">
+                        
+                        <!-- Input tersembunyi agar Formspree otomatis mengarahkan ke halaman thank-you.html setelah sukses -->
+                        <input type="hidden" name="_next" value="https://solusidanabpkb.com/thank-you.html">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap *</label>
+                                <input type="text" id="nama" name="nama" class="form-control" placeholder="Contoh: Budi Santoso" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp">Nomor WhatsApp *</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="Contoh: 081234567890" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="kendaraan">Jenis Kendaraan & Tipe *</label>
+                                <input type="text" id="kendaraan" name="kendaraan" class="form-control" placeholder="Contoh: Toyota Avanza G" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tahun">Tahun Kendaraan *</label>
+                                <input type="number" id="tahun" name="tahun" class="form-control" placeholder="Contoh: 2019" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wilayah">Wilayah Domisili (Jabodetabek) *</label>
+                            <select id="wilayah" name="wilayah" class="form-control" required>
+                                <option value="">-- Pilih Wilayah Domisili --</option>
+                                <option value="DKI Jakarta">DKI Jakarta</option>
+                                <option value="Kota / Kab. Bogor">Kota / Kab. Bogor</option>
+                                <option value="Kota / Kab. Depok">Kota / Kab. Depok</option>
+                                <option value="Tangerang / Tangerang Selatan">Tangerang / Tangerang Selatan</option>
+                                <option value="Bekasi / Cikarang">Bekasi / Cikarang</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-submit-form">
+                            🚀 Kirim Data Pengajuan Sekarang
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section - DIPINDAHKAN KE BAWAH FORM -->
         <section class="faq-section">
             <div class="container">
                 <h2 class="section-title">Pertanyaan Populer (FAQ)</h2>
@@ -650,10 +762,10 @@
             <p>Situs ini dikelola oleh Mitra Agen Resmi Marketing PT BFI Finance Indonesia Tbk. Kami bertindak sebagai perantara pemasaran resmi untuk membantu memfasilitasi proses konsultasi, pengumpulan berkas awal, dan penjadwalan survei.</p>
 
             <h3>2. Keputusan Persetujuan Pinjaman</h3>
-            <p>Seluruh keputusan mengenai persetujuan kredit, taksiran nilai kendaraan, besar pencairan, suku bunga, dan tenor pinjaman adalah **wewenang mutlak dari PT BFI Finance Indonesia Tbk** berdasarkan hasil analisis kelayakan dan kriteria risiko perusahaan.</p>
+            <p>Seluruh keputusan mengenai persetujuan kredit, taksiran nilai kendaraan, besar pencairan, suku bunga, dan tenor pinjaman adalah <strong>wewenang mutlak dari PT BFI Finance Indonesia Tbk</strong> berdasarkan hasil analisis kelayakan dan kriteria risiko perusahaan.</p>
 
             <h3>3. Bebas Biaya Layanan Agen</h3>
-            <p>Seluruh layanan konsultasi, perhitungan simulasi, hingga penjemputan berkas yang dilakukan oleh tim agen kami adalah **100% GRATIS**. Kami tidak pernah meminta pembayaran uang muka (DP) atau biaya transfer langsung ke rekening pribadi agen.</p>
+            <p>Seluruh layanan konsultasi, perhitungan simulasi, hingga penjemputan berkas yang dilakukan oleh tim agen kami adalah <strong>100% GRATIS</strong>. Kami tidak pernah meminta pembayaran uang muka (DP) atau biaya transfer langsung ke rekening pribadi agen.</p>
 
             <h3>4. Keabsahan Dokumen</h3>
             <p>Pengguna menjamin bahwa seluruh data, KTP, KK, STNK, dan BPKB yang diserahkan adalah sah, legal, dan merupakan milik pemohon yang berhak secara hukum.</p>
@@ -683,17 +795,14 @@
         }
     </script>
 
-    <!-- Script Integrasi WhatsApp ke Halaman Thank You -->
+    <!-- Script Integrasi WhatsApp Link Biasa ke Halaman Thank You -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Targetkan semua link yang mengarah ke nomor WhatsApp (wa.me)
             const waLinks = document.querySelectorAll('a[href*="wa.me"]');
             
             waLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
-                    // Cek apakah link membuka target _blank (tab baru)
                     if (this.getAttribute('target') === '_blank') {
-                        // Biarkan WhatsApp terbuka di tab baru, lalu arahkan halaman ini ke thank-you.html setelah 1 detik
                         setTimeout(function() {
                             window.location.href = 'https://solusidanabpkb.com/thank-you.html';
                         }, 1000);
