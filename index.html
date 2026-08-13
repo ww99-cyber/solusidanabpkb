@@ -589,10 +589,10 @@
                     <h2>Formulir Pengajuan Cepat</h2>
                     <p class="form-desc">Isi data singkat di bawah ini. Data Anda akan langsung terkirim ke email kami dan otomatis diproses.</p>
                     
-                    <!-- Ganti URL di bawah dengan Endpoint Formspree Anda -->
-                    <form action="https://formspree.io/f/xoeawpob" method="POST">
+                    <!-- Form dengan AJAX Submission agar mulus mengarah ke halaman thank-you.html -->
+                    <form id="pengajuanForm" action="https://formspree.io/f/xoeawpob" method="POST">
                         
-                        <!-- Input tersembunyi agar Formspree otomatis mengarahkan ke halaman thank-you.html setelah sukses -->
+                        <!-- Input tersembunyi cadangan jika form direct submission -->
                         <input type="hidden" name="_next" value="https://solusidanabpkb.com/thank-you.html">
 
                         <div class="form-row">
@@ -772,7 +772,7 @@
         </div>
     </div>
 
-    <!-- Script Navbar & Modal -->
+    <!-- Script Navbar, Modal, & Redirect Halaman Thank You -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('mainMenu');
@@ -793,13 +793,35 @@
                 document.body.style.overflow = "auto";
             }
         }
-    </script>
 
-    <!-- Script Integrasi WhatsApp Link Biasa ke Halaman Thank You -->
-    <script>
+        // Script Menangani Form Submission agar Mengarah ke Thank You Page
         document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('pengajuanForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Mencegah reload bawaan sementara data dikirim
+                    
+                    const formData = new FormData(form);
+                    
+                    // Mengirim data via Fetch API ke Formspree
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        // Langsung arahkan ke halaman thank you terlepas dari status respon (atau jika sukses)
+                        window.location.href = 'https://solusidanabpkb.com/thank-you.html';
+                    }).catch(error => {
+                        // Fallback jika terjadi kendala jaringan, tetap arahkan ke thank you page
+                        window.location.href = 'https://solusidanabpkb.com/thank-you.html';
+                    });
+                });
+            }
+
+            // Script opsional untuk link WhatsApp (jika diklik akan membuka WhatsApp lalu mengalihkan ke Thank You)
             const waLinks = document.querySelectorAll('a[href*="wa.me"]');
-            
             waLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     if (this.getAttribute('target') === '_blank') {
