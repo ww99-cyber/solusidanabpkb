@@ -8,6 +8,7 @@
     <meta name="description" content="Layanan resmi pinjaman dana tunai jaminan BPKB Mobil & Motor area Jakarta, Bogor, Depok, Tangerang, & Bekasi. Agen BFI Finance resmi berizin OJK, proses 1 hari cair.">
     <link rel="canonical" href="https://solusidanabpkb.com/">
 
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WY4RH2FJ97"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,8 +18,10 @@
       gtag('config', 'G-WY4RH2FJ97');
     </script>
     
+    <!-- Favicon Data URI -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%2300529B'/><rect x='6' y='21' width='5' height='10' rx='2.5' transform='rotate(-25 6 21)' fill='%23FFFFFF' opacity='0.7'/><rect x='14' y='15' width='5' height='16' rx='2.5' transform='rotate(-25 14 15)' fill='%23FFFFFF'/><rect x='22' y='8' width='5' height='23' rx='2.5' transform='rotate(-25 22 8)' fill='%23008827'/></svg>">
 
+    <!-- Open Graph -->
     <meta property="og:title" content="Gadai BPKB Mobil & Motor Jabodetabek - Agen BFI Finance Resmi">
     <meta property="og:description" content="Proses cepat 1 hari cair untuk area Jabodetabek. BPKB aman di brankas resmi BFI Finance. Konsultasi gratis via WhatsApp!">
     <meta property="og:type" content="website">
@@ -43,35 +46,8 @@
         }
         .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        /* CSS untuk Teks Sticky Promo Bar */
-        .sticky-promo-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-            color: #ffffff;
-            padding: 10px 15px;
-            font-size: 0.9rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .sticky-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            max-width: 1100px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        .sticky-content span {
-            line-height: 1.4;
-        }
-
         /* Header & Navbar */
-        header { background: var(--white); padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 41px; z-index: 99; }
+        header { background: var(--white); padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
         .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
 
         /* CSS Logo */
@@ -275,7 +251,7 @@
         .modal-content p, .modal-content ul { font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
         .modal-content ul { padding-left: 20px; }
 
-        /* Responsive Navbar & Sticky Promo */
+        /* Responsive Navbar */
         @media (max-width: 900px) {
             .main-menu {
                 display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
@@ -286,13 +262,6 @@
         }
 
         @media (max-width: 768px) {
-            .sticky-promo-bar {
-                font-size: 0.8rem;
-                padding: 8px 10px;
-            }
-            .sticky-content {
-                gap: 8px;
-            }
             .hero h1 { font-size: 1.7rem; }
             .hero p { font-size: 1rem; }
             .cta-card h2 { font-size: 1.4rem; }
@@ -304,6 +273,7 @@
         }
     </style>
 
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -320,12 +290,7 @@
 </head>
 <body>
 
-    <div class="sticky-promo-bar">
-        <div class="sticky-content">
-            <span>🔥 <strong>Promo Spesial Jabodetabek:</strong> Gadai BPKB Mobil/Motor Proses Cepat 1 Hari Cair, Bunga Ringan & Resmi OJK!</span>
-        </div>
-    </div>
-
+    <!-- Header & Navbar -->
     <header>
         <div class="container nav-wrap">
             <a href="https://solusidanabpkb.com" class="logo-wrap" aria-label="Beranda Utama Solusi Dana">
@@ -340,6 +305,7 @@
                 </div>
             </a>
 
+            <!-- Menu Navigasi Utama -->
             <ul class="main-menu" id="mainMenu">
                 <li><a href="https://solusidanabpkb.com" class="active">Beranda</a></li>
                 <li><a href="https://solusidanabpkb.com/produk">Produk Pembiayaan</a></li>
@@ -355,6 +321,7 @@
                         📞 0852-8653-5968
                     </a>
                 </div>
+                <!-- Hamburger Toggle untuk Mobile -->
                 <button class="menu-toggle" onclick="toggleMenu()" aria-label="Buka Menu">
                     ☰
                 </button>
@@ -363,6 +330,7 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="location-tag">📍 Melayani Area Jabodetabek</div>
@@ -393,6 +361,7 @@
             </div>
         </section>
 
+        <!-- Area Layanan -->
         <section class="area-section">
             <div class="container">
                 <h2 class="section-title">Cakupan Wilayah Layanan Kami</h2>
@@ -407,6 +376,7 @@
             </div>
         </section>
 
+        <!-- Keunggulan -->
         <section class="features">
             <div class="container">
                 <h2 class="section-title">Keunggulan Pinjaman BFI Finance</h2>
@@ -419,6 +389,7 @@
             </div>
         </section>
 
+        <!-- Tabel Contoh Simulasi Pencairan -->
         <section class="simulation-section">
             <div class="container">
                 <h2 class="section-title">Contoh Simulasi & Taksiran Pencairan</h2>
@@ -484,6 +455,7 @@
             </div>
         </section>
 
+        <!-- SECTION SOCIAL PROOF & TESTIMONI -->
         <section class="social-proof">
             <div class="container">
                 <h2 class="section-title">Dipercaya Nasabah Se-Jabodetabek</h2>
@@ -541,6 +513,7 @@
             </div>
         </section>
 
+        <!-- Keamanan Cabang & Brankas Resmi -->
         <section class="security-section">
             <div class="container">
                 <div class="security-box">
@@ -550,6 +523,7 @@
             </div>
         </section>
 
+        <!-- Persyaratan -->
         <section class="syarat">
             <div class="container">
                 <h2 class="section-title">Syarat & Dokumen Pengajuan</h2>
@@ -577,6 +551,7 @@
             </div>
         </section>
 
+        <!-- Proses Langkah Pengajuan -->
         <section class="steps-section">
             <div class="container">
                 <h2 class="section-title">4 Langkah Mudah Pengajuan</h2>
@@ -607,14 +582,17 @@
             </div>
         </section>
 
+        <!-- BAGIAN FORMULIR PENGAJUAN (FORMSPREE KE EMAIL) - SEKARANG DI ATAS FAQ -->
         <section class="form-section" id="form-pengajuan">
             <div class="container">
                 <div class="form-card-wrap">
                     <h2>Formulir Pengajuan Cepat</h2>
                     <p class="form-desc">Isi data singkat di bawah ini. Data Anda akan langsung terkirim ke email kami dan tim kami akan menghubungi Anda.</p>
                     
+                    <!-- Form dengan AJAX Submission agar mulus mengarah ke halaman thank-you.html -->
                     <form id="pengajuanForm" action="https://formspree.io/f/xoeawpob" method="POST">
                         
+                        <!-- Input tersembunyi cadangan jika form direct submission -->
                         <input type="hidden" name="_next" value="https://solusidanabpkb.com/thank-you.html">
 
                         <div class="form-row">
@@ -663,6 +641,7 @@
             </div>
         </section>
 
+        <!-- FAQ Section - DIPINDAHKAN KE BAWAH FORM -->
         <section class="faq-section">
             <div class="container">
                 <h2 class="section-title">Pertanyaan Populer (FAQ)</h2>
@@ -697,6 +676,7 @@
             </div>
         </section>
 
+        <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-card">
@@ -717,10 +697,12 @@
         </section>
     </main>
 
+    <!-- Floating Sticky WA -->
     <a href="https://wa.me/6285286535968?text=Halo%20saya%20ingin%20konsultasi%20gratis%20dan%20hitung%20simulasi%20BPKB" class="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Sekarang">
         Chat WA Sekarang
     </a>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-contacts">
@@ -746,6 +728,7 @@
         </div>
     </footer>
 
+    <!-- Modal Kebijakan Privasi -->
     <div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('privacyModal')">&times;</span>
@@ -772,6 +755,7 @@
         </div>
     </div>
 
+    <!-- Modal Syarat & Ketentuan -->
     <div id="termsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
@@ -792,6 +776,7 @@
         </div>
     </div>
 
+    <!-- Script Navbar, Modal, & Redirect Halaman Thank You -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('mainMenu');
