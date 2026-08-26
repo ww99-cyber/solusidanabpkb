@@ -217,45 +217,12 @@
         .cta-subtext a:hover { text-decoration: underline; }
 
         /* Floating Sticky WA */
-         :root { --wa:#16a34a; --wa-dark:#0e8337; }
-    * { box-sizing:border-box; }
-    body { min-height:100vh; margin:0; background:#f4f8fc; font-family:Arial,sans-serif; }
-    .wa-float {
-      position:fixed; right:18px; bottom:18px; z-index:9999;
-      width:72px; height:72px; border-radius:50%;
-      display:grid; place-items:center; color:#fff;
-      background:linear-gradient(145deg,#22c55e,var(--wa-dark));
-      border:3px solid #fff;
-      box-shadow:0 8px 22px rgba(0,82,155,.28);
-      text-decoration:none;
-      animation:wa-attention 3.2s ease-in-out infinite;
-    }
-    .wa-float::before {
-      content:""; position:absolute; inset:-7px; border:2px solid rgba(34,197,94,.48);
-      border-radius:50%; animation:wa-ring 3.2s ease-out infinite;
-    }
-    .wa-float svg { width:40px; height:40px; fill:currentColor; }
-    .wa-dot {
-      position:absolute; top:2px; right:2px; width:14px; height:14px;
-      border-radius:50%; background:#8cff00; border:2px solid #fff;
-    }
-    .wa-float:hover { animation-play-state:paused; transform:scale(1.08); }
-    .wa-float:focus-visible { outline:3px solid #00529b; outline-offset:4px; }
-    @keyframes wa-attention {
-      0%,60%,100% { transform:scale(1) rotate(0); }
-      68% { transform:scale(1.08) rotate(-5deg); }
-      74% { transform:scale(1.08) rotate(5deg); }
-      80% { transform:scale(1.04) rotate(-3deg); }
-      86% { transform:scale(1) rotate(0); }
-    }
-    @keyframes wa-ring {
-      0%,58% { opacity:0; transform:scale(.9); }
-      68% { opacity:1; }
-      90%,100% { opacity:0; transform:scale(1.35); }
-    }
-    @media (prefers-reduced-motion:reduce) {
-      .wa-float,.wa-float::before { animation:none; }
-    }
+        .float-wa {
+            position: fixed; bottom: 20px; right: 20px; background-color: var(--wa-green); color: #ffffff; border-radius: 50px;
+            padding: 12px 22px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            display: flex; align-items: center; z-index: 999;
+        }
+        .float-wa:hover { background-color: #0b6b2d; }
 
         /* Footer & Legal Links */
         footer { background: var(--dark); color: #e2e8f0; padding: 40px 0 20px; font-size: 0.9rem; text-align: center; }
@@ -731,15 +698,9 @@
     </main>
 
     <!-- Floating Sticky WA -->
-   <a class="wa-float"
-     href="https://wa.me/6282360296799?text=Halo%20SolusidanaBPKB%2C%20saya%20ingin%20konsultasi."
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Konsultasi gratis melalui WhatsApp">
-    <span class="wa-dot" aria-hidden="true"></span>
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.11 17.21c-.26-.13-1.53-.75-1.77-.84-.24-.09-.41-.13-.59.13-.17.26-.68.84-.83 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.08-1.29-.77-.68-1.29-1.53-1.44-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.59-1.42-.81-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.45.06-.68.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.81 2.76 4.38 3.87.61.26 1.09.42 1.46.54.61.2 1.17.17 1.61.1.49-.07 1.53-.62 1.74-1.23.22-.6.22-1.12.15-1.23-.06-.11-.24-.17-.5-.3M16.03 26.67h-.01a10.63 10.63 0 0 1-5.42-1.48l-.39-.23-4.03 1.06 1.08-3.93-.25-.4a10.61 10.61 0 1 1 9.02 4.98m9.04-19.7A12.7 12.7 0 0 0 5.08 22.28L3.28 28.8l6.68-1.75a12.7 12.7 0 0 0 6.06 1.54h.01A12.7 12.7 0 0 0 25.07 6.97"/>
-    </svg>
-  </a>
+    <a href="https://wa.me/6282360296799?text=Halo%20saya%20ingin%20konsultasi%20gratis%20dan%20hitung%20simulasi%20BPKB" class="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Sekarang">
+        Chat WA Sekarang
+    </a>
 
     <!-- Footer -->
     <footer>
