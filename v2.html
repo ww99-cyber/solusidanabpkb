@@ -508,7 +508,7 @@
         }
         .checkpoints-list li span { color: #34d399; font-weight: bold; }
 
-        /* Showcase Unit Slider (Gambar Motor Diperbesar) */
+        /* Showcase Unit Slider (Gambar Motor Full Cover) */
         .sec-title {
             font-size: 1.3rem;
             font-weight: 800;
@@ -546,17 +546,19 @@
             background: #071324;
             border: 1px solid var(--dark-border);
             border-radius: var(--radius-md);
-            padding: 12px;
+            padding: 0; /* Dibuat 0 agar gambar memenuhi kotak */
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 16px;
-            height: 230px;
+            height: 250px; /* Dipertinggi agar lebih optimal */
         }
         .motor-img-wrap img {
-            max-height: 205px;
-            max-width: 100%;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Membuat gambar motor memenuhi seluruh kotak secara proporsional */
+            object-position: center;
         }
 
         .simulasi-table-custom {
@@ -629,7 +631,7 @@
 
         .simulasi-arrows {
             position: absolute;
-            top: 42%;
+            top: 45%;
             transform: translateY(-50%);
             width: 36px;
             height: 36px;
@@ -1372,7 +1374,7 @@
         </section>
     </div>
 
-    <!-- Sesi 6: Contoh Simulasi Kredit BPKB Motor -->
+    <!-- Sesi 6: Contoh Simulasi Kredit BPKB Motor (Gambar Motor Full Cover) -->
     <div class="section-tint">
         <section class="showcase-section">
             <h3 class="sec-title">Contoh Simulasi Kredit BPKB Motor</h3>
@@ -1811,7 +1813,7 @@
                     <h3>🔒 Kebijakan Keamanan & Finansial</h3>
                     <p>Kerahasiaan data dan jaminan keamanan aset Anda terlindungi secara ketat sesuai standar perbankan:</p>
                     <ul>
-                        <li>Dokumen fisik BPKB asli tersimpan aman di brankas kantor cabang resmi PT BFI Finance Indonesia Tbk.</li>
+                        <li>Dokumen fisik BPKB asli tersimpan aman di ruang brankas kantor cabang resmi PT BFI Finance Indonesia Tbk.</li>
                         <li>Dana pencairan ditransfer utuh langsung ke rekening bank atas nama pemohon.</li>
                         <li>Kami tidak pernah meminta uang muka (DP), transfer dana ke rekening pribadi agen, atau titipan biaya dalam bentuk apa pun.</li>
                     </ul>
