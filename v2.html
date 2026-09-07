@@ -535,7 +535,7 @@
             box-shadow: var(--shadow-subtle);
             text-align: left;
         }
-        .motor-img-wrap {
+       .motor-img-wrap {
             background: #071324;
             border: 1px solid var(--dark-border);
             border-radius: var(--radius-md);
@@ -545,12 +545,13 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 16px;
-            height: 250px;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Mengunci rasio kotak kontainer menjadi 16:9 */
         }
         .motor-img-wrap img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Mengubah dari cover ke contain agar seluruh bagian motor terlihat utuh tanpa terpotong */
             object-position: center;
         }
 
