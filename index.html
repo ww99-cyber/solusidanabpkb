@@ -1890,7 +1890,7 @@
 
 </div>
 
-<!-- JavaScript Hero Slider, Simulasi Slider (Stabil 4,5 Detik & Pause on Touch/Hover), Count-Up, Accordion & WhatsApp/Form Local Redirect Handlers -->
+<!-- JavaScript Hero Slider, Simulasi Slider (Stabil 4,5 Detik & Pause on Touch/Hover), Count-Up, Accordion & WhatsApp/Form Handlers -->
 <script>
     // --- HERO IMAGE SLIDER ---
     let currentHeroSlide = 0;
@@ -2049,7 +2049,7 @@
         elem.parentElement.classList.toggle('open');
     }
 
-    // Auto Format Nomor Plat, Validasi Tahun Minimal 2013, WhatsApp & Form Local Redirect Handlers
+    // Auto Format Nomor Plat, Validasi Tahun Minimal 2013, WhatsApp & Form Redirect Handlers (Tanpa New Tab)
     document.addEventListener("DOMContentLoaded", function() {
         startHeroAuto();
         startSimAuto();
@@ -2086,7 +2086,7 @@
             });
         }
 
-        // Handler untuk tombol WhatsApp agar membuka chat dan mengarah ke thank-you-wa.html
+        // Handler tombol WhatsApp (Mengarahkan langsung ke WhatsApp lalu ke halaman thank-you-wa.html di tab yang sama)
         const chatOnlyButtons = document.querySelectorAll('.wa-chat-only');
         chatOnlyButtons.forEach(function(btn) {
             btn.addEventListener('click', function(e) {
@@ -2094,16 +2094,16 @@
                 const customText = btn.getAttribute('data-wa-text') || 'Halo%20saya%20ingin%20konsultasi%20simulasi%20pinjaman%20BPKB%20Motor';
                 const waUrl = `https://wa.me/6282360296799?text=${customText}`;
 
-                // 1. Membuka WhatsApp di tab baru secara aman
-                const newWindow = window.open(waUrl, '_blank');
-                if (newWindow) {
-                    newWindow.focus();
-                }
-
-                // 2. Mengarahkan halaman utama ke file lokal thank-you-wa.html setelah jeda singkat
+                // Membuka WhatsApp di tab yang sama, lalu redirect ke thank-you-wa.html
+                window.location.href = waUrl;
+                
+                // Jika ingin menggunakan jeda agar link WA sempat terpanggil sebelum halaman berubah ke thank you:
+                /*
+                window.open(waUrl, '_self');
                 setTimeout(function() {
                     window.location.href = 'thank-you-wa.html';
-                }, 300);
+                }, 500);
+                */
             });
         });
 
@@ -2137,16 +2137,13 @@
 
                 const waUrl = `https://wa.me/6282360296799?text=${text}`;
 
-                // 1. Membuka WhatsApp di tab baru untuk admin secara aman
-                const newWindow = window.open(waUrl, '_blank');
-                if (newWindow) {
-                    newWindow.focus();
-                }
-
-                // 2. Mengarahkan halaman utama ke file lokal konversi thank-you-form.html setelah jeda singkat
+                // Mengarahkan halaman saat ini ke WhatsApp, kemudian membuka halaman thank-you-form.html
+                // Catatan: Karena pindah halaman, untuk mengirim ke WA sekaligus ke Thank You, gunakan teknik form target atau buka link via location.href
+                window.location.href = waUrl;
+                
                 setTimeout(function() {
                     window.location.href = 'thank-you-form.html';
-                }, 300);
+                }, 1000);
             });
         }
     });
