@@ -1188,7 +1188,7 @@
         <a href="https://solusidanabpkb.com" class="logo-area" aria-label="Solusi Dana BPKB">
             <img src="/img/logo.png" alt="Solusi Dana BPKB Logo" class="logo-img">
         </a>
-        <button class="btn-wa-general btn-header-wa wa-track-link" data-wa-text="Halo%20saya%20ingin%20konsultasi%20pinjaman%20BPKB%20Motor" aria-label="Hubungi kami melalui WhatsApp">
+        <button class="btn-wa-general btn-header-wa wa-chat-only" data-wa-text="Halo%20saya%20ingin%20konsultasi%20pinjaman%20BPKB%20Motor" aria-label="Hubungi kami melalui WhatsApp">
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/>
             </svg>
@@ -1206,7 +1206,7 @@
             <a href="#kalkulator" class="btn-amber-solid">
                 📝 Hitung Simulasi BPKB Motor
             </a>
-            <button class="btn-wa-general btn-cyan-solid wa-track-link" data-wa-text="Halo%20saya%20ingin%20konsultasi%20cepat%20BPKB%20Motor">
+            <button class="btn-wa-general btn-cyan-solid wa-chat-only" data-wa-text="Halo%20saya%20ingin%20konsultasi%20cepat%20BPKB%20Motor">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.003l-1.416 5.163 5.289-1.386c1.472.8 3.13 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.925-7.062a9.927 9.927 0 0 0-7.064-2.94z"/>
                 </svg>
@@ -1380,8 +1380,8 @@
                 </div>
 
                 <div class="form-group-gad">
-                    <label for="wilayah"Wilayah Domisili</label>
-                    <input type="text" id="wilayah" name="wilayah" class="input-gad" placeholder="Contoh: Jakarta selatan" required>
+                    <label for="wilayah">Wilayah Domisili</label>
+                    <input type="text" id="wilayah" name="wilayah" class="input-gad" placeholder="Contoh: Jakarta Selatan" required>
                 </div>
 
                 <button type="submit" id="btnSubmitForm" class="btn-submit-calc">
@@ -1882,7 +1882,7 @@
         <a href="#kalkulator" class="btn-bottom-amber">
             Hitung Simulasi Motor
         </a>
-        <button class="btn-wa-general btn-bottom-cyan wa-track-link" data-wa-text="Halo%20saya%20ingin%20konsultasi%20simulasi%20pinjaman%20BPKB%20Motor">
+        <button class="btn-wa-general btn-bottom-cyan wa-chat-only" data-wa-text="Halo%20saya%20ingin%20konsultasi%20simulasi%20pinjaman%20BPKB%20Motor">
             WhatsApp Kami
         </button>
     </div>
@@ -2085,19 +2085,14 @@
             });
         }
 
-        // Global Handler untuk semua tombol WhatsApp agar membuka WA dan menuju thank-you.html
-        const waButtons = document.querySelectorAll('.wa-track-link');
-        waButtons.forEach(function(btn) {
+        // Handler untuk tombol WhatsApp biasa (hanya membuka chat WhatsApp tanpa redirect)
+        const chatOnlyButtons = document.querySelectorAll('.wa-chat-only');
+        chatOnlyButtons.forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const customText = btn.getAttribute('data-wa-text') || 'Halo%20saya%20ingin%20konsultasi%20pinjaman%20BPKB%20Motor';
                 const waUrl = `https://wa.me/6282360296799?text=${customText}`;
-
-                // Buka WhatsApp di tab baru
                 window.open(waUrl, '_blank');
-
-                // Arahkan ke halaman Thank You
-                window.location.href = 'thank-you.html';
             });
         });
 
@@ -2134,7 +2129,7 @@
                 // 1. Membuka WhatsApp di tab baru
                 window.open(waUrl, '_blank');
 
-                // 2. Mengarahkan halaman utama ke halaman thank-you.html
+                // 2. Mengarahkan halaman utama ke halaman thank-you.html (Konversi Utama)
                 window.location.href = 'thank-you.html';
             });
         }
