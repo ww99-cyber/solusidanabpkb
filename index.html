@@ -108,7 +108,7 @@
             min-height: 100vh;
             box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
             position: relative;
-            padding-bottom: 100px;
+            padding-bottom: 90px;
         }
 
         /* Top Header Navbar */
@@ -1043,7 +1043,7 @@
             100% { background-position: 0 0; }
         }
 
-        /* Fixed Bottom Bar */
+        /* Fixed Bottom Bar - Diperkecil Ukurannya */
         .bottom-bar-fixed {
             position: fixed;
             bottom: 0;
@@ -1054,22 +1054,22 @@
             background: rgba(11, 31, 58, 0.96);
             backdrop-filter: blur(12px);
             border-top: 1px solid var(--dark-border);
-            padding: 12px 20px;
+            padding: 8px 16px;
             display: flex;
-            gap: 12px;
+            gap: 10px;
             z-index: 1000;
             box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
         }
         
-        /* Tombol Kiri (Hitung Simulasi Motor) dengan Glow Effect */
+        /* Tombol Kiri (Hitung Simulasi Motor) - Lebih Kecil */
         .btn-bottom-amber {
             flex: 1;
             color: #ffffff;
             text-align: center;
-            padding: 13px;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 0.95rem;
+            padding: 9px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.82rem;
             text-decoration: none;
             position: relative;
             z-index: 0;
@@ -1079,6 +1079,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            white-space: nowrap;
         }
         .btn-bottom-amber:before {
             content: '';
@@ -1088,12 +1089,12 @@
             left: -2px;
             background-size: 400%;
             z-index: -1;
-            filter: blur(5px);
+            filter: blur(4px);
             width: calc(100% + 4px);
             height: calc(100% + 4px);
             animation: glowing-wa 20s linear infinite;
             opacity: 1;
-            border-radius: 10px;
+            border-radius: 8px;
         }
         .btn-bottom-amber:after {
             z-index: -1;
@@ -1104,28 +1105,29 @@
             background: var(--brand-amber);
             left: 0;
             top: 0;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
-        /* Tombol Kanan (WhatsApp Kami) dengan Glow Effect */
+        /* Tombol Kanan (WhatsApp Kami) - Lebih Kecil */
         .btn-bottom-cyan {
             flex: 1;
             color: #ffffff;
             text-align: center;
-            padding: 13px;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 0.95rem;
+            padding: 9px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.82rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 5px;
             cursor: pointer;
             position: relative;
             z-index: 0;
             background: #111;
             border: none;
             outline: none;
+            white-space: nowrap;
         }
         .btn-bottom-cyan:before {
             content: '';
@@ -1135,12 +1137,12 @@
             left: -2px;
             background-size: 400%;
             z-index: -1;
-            filter: blur(5px);
+            filter: blur(4px);
             width: calc(100% + 4px);
             height: calc(100% + 4px);
             animation: glowing-wa 20s linear infinite;
             opacity: 1;
-            border-radius: 10px;
+            border-radius: 8px;
         }
         .btn-bottom-cyan:after {
             z-index: -1;
@@ -1151,7 +1153,7 @@
             background: var(--brand-green);
             left: 0;
             top: 0;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         /* Responsive Adjustments */
@@ -1166,6 +1168,7 @@
             .steps-grid-list { display: grid; grid-template-columns: repeat(2, 1fr); }
             .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
             .transparency-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+            .btn-bottom-amber, .btn-bottom-cyan { font-size: 0.9rem; padding: 11px 16px; }
         }
 
         @media (min-width: 860px) {
@@ -1176,7 +1179,7 @@
             }
             .commitment-grid { grid-template-columns: repeat(3, 1fr); }
             .payment-grid { grid-template-columns: repeat(3, 1fr); }
-            .bottom-bar-fixed { border-radius: 40px 40px 0 0; }
+            .bottom-bar-fixed { border-radius: 30px 30px 0 0; }
         }
     </style>
 </head>
@@ -1881,7 +1884,7 @@
     <!-- Fixed Bottom Bar -->
     <div class="bottom-bar-fixed">
         <a href="#kalkulator" class="btn-bottom-amber">
-            Hitung Simulasi Motor
+            Hitung Simulasi
         </a>
         <button class="btn-wa-general btn-bottom-cyan wa-chat-only" data-wa-text="Halo%20saya%20ingin%20konsultasi%20simulasi%20pinjaman%20BPKB%20Motor">
             WhatsApp Kami
@@ -1974,7 +1977,6 @@
     }
 
     function startSimAuto() {
-        stopSimAuto();
         simAutoInterval = setInterval(() => {
             currentSimSlide = (currentSimSlide + 1) % simSlides.length;
             updateSimSlider();
@@ -1995,7 +1997,7 @@
         simSliderWrap.addEventListener('mouseenter', stopSimAuto);
         simSliderWrap.addEventListener('mouseleave', startSimAuto);
         simSliderWrap.addEventListener('touchstart', stopSimAuto, { passive: true });
-        simSliderWrap.addEventListener('touchend', startSimAuto, { passive: true });
+        simSliderWrap.addEventListener('touchend', stopSimAuto, { passive: true });
     }
 
     // Count-Up Animation
@@ -2049,7 +2051,7 @@
         elem.parentElement.classList.toggle('open');
     }
 
-    // Auto Format Plat, Validasi Tahun 2013, WhatsApp & Form Local Redirect Handlers dengan window.open (_blank)
+    // Auto Format Nomor Plat, Validasi Tahun Minimal 2013, WhatsApp & Form Redirect Handlers
     document.addEventListener("DOMContentLoaded", function() {
         startHeroAuto();
         startSimAuto();
@@ -2086,7 +2088,7 @@
             });
         }
 
-        // Handler untuk tombol WhatsApp: buka chat di tab baru (_blank), lalu alihkan halaman ini ke thank-you-wa.html
+        // Handler untuk tombol WhatsApp: buka chat di tab baru (_blank), lalu alihkan halaman ini ke thank-you-wa.html di tab yang sama
         const chatOnlyButtons = document.querySelectorAll('.wa-chat-only');
         chatOnlyButtons.forEach(function(btn) {
             btn.addEventListener('click', function(e) {
@@ -2094,10 +2096,10 @@
                 const customText = btn.getAttribute('data-wa-text') || 'Halo%20saya%20ingin%20konsultasi%20simulasi%20pinjaman%20BPKB%20Motor';
                 const waUrl = `https://wa.me/6282360296799?text=${customText}`;
 
-                // Membuka WhatsApp di tab baru
+                // 1. Membuka WhatsApp di tab baru
                 window.open(waUrl, '_blank');
 
-                // Mengarahkan halaman saat ini ke thank-you-wa.html
+                // 2. Mengarahkan halaman saat ini ke thank-you-wa.html di tab yang sama
                 window.location.href = 'thank-you-wa.html';
             });
         });
@@ -2132,10 +2134,10 @@
 
                 const waUrl = `https://wa.me/6282360296799?text=${text}`;
 
-                // Membuka WhatsApp di tab baru untuk admin
+                // 1. Membuka WhatsApp di tab baru untuk admin
                 window.open(waUrl, '_blank');
 
-                // Mengarahkan halaman saat ini ke thank-you-form.html[cite: 5]
+                // 2. Mengarahkan halaman saat ini ke thank-you-form.html di tab yang sama[cite: 5]
                 window.location.href = 'thank-you-form.html';
             });
         }
