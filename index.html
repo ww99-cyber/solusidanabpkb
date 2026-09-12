@@ -2049,7 +2049,7 @@
         elem.parentElement.classList.toggle('open');
     }
 
-    // Auto Format Nomor Plat, Validasi Tahun Minimal 2013, WhatsApp & Form Redirect Handlers (Tanpa New Tab)
+    // Auto Format Plat, Validasi Tahun 2013, WhatsApp & Form Local Redirect Handlers dengan window.open (_blank)
     document.addEventListener("DOMContentLoaded", function() {
         startHeroAuto();
         startSimAuto();
@@ -2086,7 +2086,7 @@
             });
         }
 
-        // Handler tombol WhatsApp (Mengarahkan langsung ke WhatsApp lalu ke halaman thank-you-wa.html di tab yang sama)
+        // Handler untuk tombol WhatsApp: buka chat di tab baru (_blank), lalu alihkan halaman ini ke thank-you-wa.html
         const chatOnlyButtons = document.querySelectorAll('.wa-chat-only');
         chatOnlyButtons.forEach(function(btn) {
             btn.addEventListener('click', function(e) {
@@ -2094,16 +2094,11 @@
                 const customText = btn.getAttribute('data-wa-text') || 'Halo%20saya%20ingin%20konsultasi%20simulasi%20pinjaman%20BPKB%20Motor';
                 const waUrl = `https://wa.me/6282360296799?text=${customText}`;
 
-                // Membuka WhatsApp di tab yang sama, lalu redirect ke thank-you-wa.html
-                window.location.href = waUrl;
-                
-                // Jika ingin menggunakan jeda agar link WA sempat terpanggil sebelum halaman berubah ke thank you:
-                /*
-                window.open(waUrl, '_self');
-                setTimeout(function() {
-                    window.location.href = 'thank-you-wa.html';
-                }, 500);
-                */
+                // Membuka WhatsApp di tab baru
+                window.open(waUrl, '_blank');
+
+                // Mengarahkan halaman saat ini ke thank-you-wa.html
+                window.location.href = 'thank-you-wa.html';
             });
         });
 
@@ -2137,13 +2132,11 @@
 
                 const waUrl = `https://wa.me/6282360296799?text=${text}`;
 
-                // Mengarahkan halaman saat ini ke WhatsApp, kemudian membuka halaman thank-you-form.html
-                // Catatan: Karena pindah halaman, untuk mengirim ke WA sekaligus ke Thank You, gunakan teknik form target atau buka link via location.href
-                window.location.href = waUrl;
-                
-                setTimeout(function() {
-                    window.location.href = 'thank-you-form.html';
-                }, 1000);
+                // Membuka WhatsApp di tab baru untuk admin
+                window.open(waUrl, '_blank');
+
+                // Mengarahkan halaman saat ini ke thank-you-form.html[cite: 5]
+                window.location.href = 'thank-you-form.html';
             });
         }
     });
