@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1f3a">
+    <title>Terima Kasih - Pengajuan Berhasil | Solusi Dana BPKB</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-bg: #0b1f3a;
+            --dark-surface: #102a4c;
+            --dark-card: #163763;
+            --dark-border: #224c82;
+            
+            --brand-blue: #0080ff;
+            --brand-green: #10b981;
+            --brand-green-hover: #059669;
+            --brand-amber: #f59e0b;
+            
+            --text-title: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
+            --white: #ffffff;
+            
+            --radius-lg: 18px;
+            --radius-xl: 22px;
+            --shadow-float: 0 10px 30px -4px rgba(0, 0, 0, 0.4);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-body);
+            background-color: #071324;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .thankyou-wrapper {
+            width: 100%;
+            max-width: 580px;
+            background-color: var(--dark-bg);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--radius-xl);
+            padding: 40px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-float);
+        }
+
+        .success-icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 2px solid var(--brand-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            animation: pulse-icon 2s infinite ease-in-out;
+        }
+
+        .success-icon-box svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--brand-green);
+        }
+
+        @keyframes pulse-icon {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        h1 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--text-title);
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            font-size: 0.96rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.55;
+        }
+
+        .info-box {
+            background: var(--dark-surface);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .info-box h3 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .info-box ul li {
+            font-size: 0.86rem;
+            color: var(--text-body);
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .info-box ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--brand-green);
+            font-weight: bold;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--brand-green);
+            color: #0b1f3a;
+            font-weight: 800;
+            padding: 14px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.98rem;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-green-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--dark-card);
+            color: var(--text-title);
+            font-weight: 700;
+            padding: 14px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border: 1px solid var(--dark-border);
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark-surface);
+            transform: translateY(-1px);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thankyou-wrapper">
+        <div class="success-icon-box">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+        </div>
+
+        <h1>Pengajuan Berhasil Dikirim!</h1>
+        <p>Terima kasih telah mempercayakan kebutuhan dana tunai Anda kepada kami. Data simulasi kendaraan Anda telah diteruskan ke tim marketing resmi kami.</p>
+
+        <div class="info-box">
+            <h3>Langkah Selanjutnya:</h3>
+            <ul>
+                <li>Tim kami akan segera memverifikasi data kendaraan Anda.</li>
+                <li>Anda akan dihubungi melalui nomor WhatsApp untuk konfirmasi taksiran pinjaman.</li>
+                <li>Siapkan dokumen syarat (KTP, KK, STNK & BPKB) untuk proses pencairan cepat.</li>
+            </ul>
+        </div>
+
+        <div class="action-buttons">
+            <a href="https://wa.me/6282360296799?text=Halo%20Admin,%20saya%20sudah%20mengisi%20form%20pengajuan%20di%20website" class="btn-primary" target="_blank" rel="noopener">
+                💬 Hubungi Admin via WhatsApp
+            </a>
+            <a href="index.html" class="btn-secondary">
+                ← Kembali ke Beranda Utama
+            </a>
+        </div>
+
+        <footer>
+            <p>solusidanabpkb.com | Mitra Resmi BFI Finance Indonesia</p>
+        </footer>
+    </div>
+
+</body>
+</html>
