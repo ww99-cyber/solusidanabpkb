@@ -494,10 +494,24 @@
             background: var(--brand-green-hover);
             transform: translateY(-1px);
         }
+        .btn-submit-calc:disabled {
+            background: #475569 !important;
+            color: #94a3b8 !important;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
         .btn-submit-calc svg {
             width: 20px;
             height: 20px;
             fill: currentColor;
+        }
+        .error-msg {
+            font-size: 0.78rem;
+            color: #f87171;
+            margin-top: 5px;
+            display: none;
+            font-weight: 600;
         }
 
         .checkpoints-list {
@@ -1347,6 +1361,7 @@
                     <div class="form-group-gad">
                         <label for="tahun">Tahun Motor</label>
                         <input type="number" id="tahun" name="tahun" class="input-gad" placeholder="2021" required>
+                        <div id="tahunError" class="error-msg">Minimal tahun kendaraan adalah 2013 ke atas.</div>
                     </div>
                 </div>
 
@@ -1356,9 +1371,17 @@
                         <input type="text" id="plat" name="plat" class="input-gad" placeholder="B 1234 ABC" maxlength="11" required>
                     </div>
                     <div class="form-group-gad">
-                        <label for="wilayah">Wilayah Domisili</label>
-                        <input type="text" id="wilayah" name="wilayah" class="input-gad" placeholder="Contoh: Jakarta Selatan" required>
+                        <label for="pajakStnk">Kondisi Pajak STNK</label>
+                        <select id="pajakStnk" name="pajakStnk" class="input-gad" required>
+                            <option value="Hidup">Hidup</option>
+                            <option value="Mati">Mati</option>
+                        </select>
                     </div>
+                </div>
+
+                <div class="form-group-gad">
+                    <label for="wilayah">Kode Pos Wilayah Domisili</label>
+                    <input type="text" id="wilayah" name="wilayah" class="input-gad" placeholder="Contoh: 11510" required>
                 </div>
 
                 <button type="submit" id="btnSubmitForm" class="btn-submit-calc">
@@ -1672,7 +1695,6 @@
                     </div>
                 </div>
 
-               
                 <div class="commit-card">
                     <span class="commit-icon">🤝</span>
                     <div class="commit-text">
@@ -2026,7 +2048,7 @@
         elem.parentElement.classList.toggle('open');
     }
 
-    // Auto Format Nomor Plat, WhatsApp Handler & Redirect ke Thank You
+    // Auto Format Nomor Plat, Validasi Tahun Minimal 2013, WhatsApp Handler & Redirect ke Thank You
     document.addEventListener("DOMContentLoaded", function() {
         startHeroAuto();
         startSimAuto();
@@ -2042,6 +2064,24 @@
                 if (val.length > 5) formatted += ' ' + val.substring(5, 8);
 
                 e.target.value = formatted;
+            });
+        }
+
+        // Validasi tahun motor minimal 2013
+        const tahunInput = document.getElementById('tahun');
+        const btnSubmitForm = document.getElementById('btnSubmitForm');
+        const tahunError = document.getElementById('tahunError');
+
+        if (tahunInput && btnSubmitForm && tahunError) {
+            tahunInput.addEventListener('input', function() {
+                const val = parseInt(tahunInput.value);
+                if (!isNaN(val) && val < 2013) {
+                    btnSubmitForm.disabled = true;
+                    tahunError.style.display = 'block';
+                } else {
+                    btnSubmitForm.disabled = false;
+                    tahunError.style.display = 'none';
+                }
             });
         }
 
@@ -2067,11 +2107,18 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
 
+                const tahunVal = parseInt(tahunInput.value);
+                if (!isNaN(tahunVal) && tahunVal < 2013) {
+                    alert("Minimal tahun kendaraan adalah 2013 ke atas.");
+                    return;
+                }
+
                 const nama = document.getElementById('nama').value.trim();
                 const whatsapp = document.getElementById('whatsapp').value.trim();
                 const kendaraan = document.getElementById('kendaraan').value.trim();
-                const tahun = document.getElementById('tahun').value.trim();
+                const tahun = tahunInput.value.trim();
                 const plat = document.getElementById('plat').value.trim();
+                const pajakStnk = document.getElementById('pajakStnk').value;
                 const wilayah = document.getElementById('wilayah').value.trim();
 
                 const text = `Halo Admin, saya ingin mengajukan simulasi pinjaman BPKB Motor:%0A` +
@@ -2079,6 +2126,7 @@
                              `- No. WhatsApp: ${whatsapp}%0A` +
                              `- Kendaraan: ${kendaraan} (${tahun})%0A` +
                              `- No. Plat: ${plat}%0A` +
+                             `- Pajak STNK: ${pajakStnk}%0A` +
                              `- Wilayah Domisili: ${wilayah}`;
 
                 const waUrl = `https://wa.me/6282360296799?text=${text}`;
