@@ -7,6 +7,7 @@
     <title>Pinjaman Dana BPKB Motor Seluruh Indonesia | Solusidanabpkb</title>
     <meta name="description" content="Layanan resmi pinjaman dana tunai jaminan BPKB Motor seluruh Indonesia. Pencairan hingga 70 juta, tenor 24 bulan, taksiran hingga 90%. Mitra resmi BFI Finance.">
     <link rel="canonical" href="https://solusidanabpkb.com/">
+    
     <!-- Open Graph / Social Media Preview Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://solusidanabpkb.com/">
@@ -1889,7 +1890,7 @@
 
 </div>
 
-<!-- JavaScript Hero Slider, Simulasi Slider (Stabil 4,5 Detik & Pause on Touch/Hover), Count-Up, Accordion & WhatsApp/Form Handlers -->
+<!-- JavaScript Hero Slider, Simulasi Slider (Stabil 4,5 Detik & Pause on Touch/Hover), Count-Up, Accordion & WhatsApp/Form Local Redirect Handlers -->
 <script>
     // --- HERO IMAGE SLIDER ---
     let currentHeroSlide = 0;
@@ -2048,7 +2049,7 @@
         elem.parentElement.classList.toggle('open');
     }
 
-    // Auto Format Nomor Plat, Validasi Tahun Minimal 2013, WhatsApp & Form Redirect Handlers
+    // Auto Format Nomor Plat, Validasi Tahun Minimal 2013, WhatsApp & Form Local Redirect Handlers
     document.addEventListener("DOMContentLoaded", function() {
         startHeroAuto();
         startSimAuto();
@@ -2090,14 +2091,19 @@
         chatOnlyButtons.forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                const customText = btn.getAttribute('data-wa-text') || 'Halo%20saya%20ingin%20konsultasi%20pinjaman%20BPKB%20Motor';
+                const customText = btn.getAttribute('data-wa-text') || 'Halo%20saya%20ingin%20konsultasi%20simulasi%20pinjaman%20BPKB%20Motor';
                 const waUrl = `https://wa.me/6282360296799?text=${customText}`;
 
-                // 1. Membuka WhatsApp di tab baru
-                window.open(waUrl, '_blank');
+                // 1. Membuka WhatsApp di tab baru secara aman
+                const newWindow = window.open(waUrl, '_blank');
+                if (newWindow) {
+                    newWindow.focus();
+                }
 
-                // 2. Mengarahkan halaman utama ke halaman thank-you-wa.html
-                window.location.href = 'https://solusidanabpkb.com/thank-you-wa';
+                // 2. Mengarahkan halaman utama ke file lokal thank-you-wa.html setelah jeda singkat
+                setTimeout(function() {
+                    window.location.href = 'thank-you-wa.html';
+                }, 300);
             });
         });
 
@@ -2131,11 +2137,16 @@
 
                 const waUrl = `https://wa.me/6282360296799?text=${text}`;
 
-                // 1. Membuka WhatsApp di tab baru untuk admin
-                window.open(waUrl, '_blank');
+                // 1. Membuka WhatsApp di tab baru untuk admin secara aman
+                const newWindow = window.open(waUrl, '_blank');
+                if (newWindow) {
+                    newWindow.focus();
+                }
 
-                // 2. Mengarahkan halaman utama ke halaman konversi thank-you-form.html
-                window.location.href = 'https://solusidanabpkb.com/thank-you-form';
+                // 2. Mengarahkan halaman utama ke file lokal konversi thank-you-form.html setelah jeda singkat
+                setTimeout(function() {
+                    window.location.href = 'thank-you-form.html';
+                }, 300);
             });
         }
     });
