@@ -1592,12 +1592,24 @@
                     <strong>Diperlukan</strong>
                 </div>
                 <div class="req-item">
-                    <span>STNK(Pajak Hidup / Mati)</span>
+                    <span>STNK (Pajak Hidup / Mati)</span>
                     <strong>Diperlukan</strong>
                 </div>
                 <div class="req-item">
                     <span>BPKB</span>
                     <strong>Diperlukan</strong>
+                </div>
+                <div class="req-item">
+                    <span>NPWP</span>
+                    <strong>Diperlukan</strong>
+                </div>
+                <div class="req-item">
+                    <span>Slip Gaji atau Mutasi Rekening</span>
+                    <strong>Jika Diperlukan</strong>
+                </div>
+                <div class="req-item">
+                    <span>Bukti Tempat Tinggal</span>
+                    <strong>Jika Diperlukan</strong>
                 </div>
             </div>
         </div>
@@ -1726,7 +1738,7 @@
                 <div class="commit-card">
                     <span class="commit-icon">🏠</span>
                     <div class="commit-text">
-                        <h3>Rumah Sewa / Kontrak / Kos / Mez</h3>
+                        <h3>Rumah Sewa / Kontrak / Kos / Mess</h3>
                         <p>Status tempat tinggal kontrak atau sewa tetap dapat kami ajukan.</p>
                     </div>
                 </div>
@@ -1997,7 +2009,7 @@
         simSliderWrap.addEventListener('mouseenter', stopSimAuto);
         simSliderWrap.addEventListener('mouseleave', startSimAuto);
         simSliderWrap.addEventListener('touchstart', stopSimAuto, { passive: true });
-        simSliderWrap.addEventListener('touchend', stopSimAuto, { passive: true });
+        simSliderWrap.addEventListener('touchend', startSimAuto, { passive: true });
     }
 
     // Count-Up Animation
@@ -2137,7 +2149,7 @@
                 // 1. Membuka WhatsApp di tab baru untuk admin
                 window.open(waUrl, '_blank');
 
-                // 2. Mengarahkan halaman saat ini ke thank-you-form.html di tab yang sama[cite: 5]
+                // 2. Mengarahkan halaman saat ini ke thank-you-form.html di tab yang sama
                 window.location.href = 'thank-you-form.html';
             });
         }
